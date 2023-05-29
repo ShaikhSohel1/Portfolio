@@ -130,8 +130,11 @@ const Navbar = () => {
   ):
   (
     
+    
       
-  <HStack justifyContent={"space-between"}  p={4} pos={"fixed"} bottom={1 } >
+  <HStack justifyContent={"space-between"}  p={4} pos={"fixed"} bottom={0 } w={"full"} bg={bg} borderTopRadius={10}>
+    
+    
        <Image
         borderRadius="full"
         boxSize="2.5rem"
@@ -139,12 +142,14 @@ const Navbar = () => {
         alt="Dan Abramov"
 
       />
+      
+      
 
     <Button
       pos={"fixed"}
     right={0}
       colorScheme="whiteAlpha"
-      bg={bg}
+      // bg={bg}
       p={0}
       w={100}
       h={10}
@@ -159,6 +164,7 @@ const Navbar = () => {
       >
       <BiCategory size={"35"} />
     </Button>
+    
     <Drawer isOpen={isOpen} placement="bottom" onClose={onClose}>
         <DrawerOverlay />
         <DrawerContent>
@@ -166,8 +172,14 @@ const Navbar = () => {
           <DrawerHeader justifyItems={"center"}>Sohel Shaikh</DrawerHeader>
 
           <DrawerBody>
+            
             <VStack>
-
+            <HStack>
+        <BiMoon color={!color} size={20} />
+        <Switch size="lg" onChange={toggleColorMode} colorScheme="blackAlpha" />
+        <BiSun color={!color} size={20} />
+        {colorMode === "light" ? "Dark" : "Light"}
+      </HStack>
             <HStack alignItems={"flex-start"} spacing={"5"}>
             <Button color={color} bg={bg}>
 
@@ -247,7 +259,9 @@ const Navbar = () => {
           </DrawerBody>
         </DrawerContent>
       </Drawer>
+      
       </HStack>
+      
     
 
  
