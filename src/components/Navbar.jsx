@@ -58,6 +58,8 @@ const Navbar = () => {
         boxSize="4rem"
         src="https://bit.ly/dan-abramov"
         alt="Dan Abramov"
+        className="hover:animate-spin  " 
+        cursor={"pointer"}   
       />
 
       <Heading size="md">Sohel Shaikh</Heading>
@@ -115,8 +117,9 @@ const Navbar = () => {
         boxSize="2.5rem"
         src="https://bit.ly/dan-abramov"
         alt="Dan Abramov"
+        className="hover:animate-spin"
+        cursor={"pointer"}
       />
-
       <Button
         pos={"fixed"}
         right={0}
@@ -140,7 +143,7 @@ const Navbar = () => {
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
-          <DrawerHeader justifyItems={"center"}>Sohel Shaikh</DrawerHeader>
+          <DrawerHeader justifyItems={"center"}>Sohel  Shaikh</DrawerHeader>
 
           <DrawerBody>
             <VStack>
