@@ -4,9 +4,11 @@
     transition: all 0.2s;
     position: relative;
     cursor: pointer;
-    background-image:url(https://bit.ly/dan-abramov);
+    background-image:url(./assets/sohel.jpg);
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+
     border-radius: 8px;
     /* overflow: hidden; */
     box-shadow: 0 0 10px rgba(0,0,0,0.25);
@@ -62,4 +64,65 @@
     to {
       transform: translateY(10px);
     }
+  }
+  .bg1{
+    background: linear-gradient( to right,#44ea76, #39fad7);
+    color: black;
+    background-color: transparent;
+    transition-duration: .3s;
+    letter-spacing: 1.4px;
+  }
+  .bg1::before{
+    content: "";
+    position: absolute;
+    background: linear-gradient( to right,#2ce664, #1acfae);
+    filter: blur(10px);
+    bottom: -3px;
+    z-index: -1;
+    transition-duration: .3s;
+  }
+
+  .Btn {
+    width: 180px;
+    height: 45px;
+    border-radius: 40px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: white;
+    background-color: transparent;
+    cursor: pointer;
+    position: relative;
+    background: linear-gradient( to right,#44ea76, #39fad7);
+    transition-duration: .3s;
+    letter-spacing: 1.4px;
+  }
+  
+  .svgIcon path {
+    fill: white;
+  }
+  
+  .Btn:hover {
+    transform: scale(0.95);
+    transition-duration: .3s;
+  }
+  
+  .Btn::before {
+    content: "";
+    position: absolute;
+    width: 80%;
+    height: 30%;
+    background: linear-gradient( to right,#44ea76, #39fad7);
+    filter: blur(10px);
+    bottom: -3px;
+    z-index: -1;
+    transition-duration: .3s;
+  }
+  
+  .Btn:hover::before {
+    bottom: -1px;
+    filter: blur(5px);
+    transition-duration: .3s;
   }

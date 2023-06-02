@@ -89,7 +89,12 @@ const Navbar = () => {
 
       <HStack>
         <BiMoon color={!color} size={20} />
-        <Switch size="lg" onChange={toggleColorMode} colorScheme="blackAlpha" scrollBehavior={"smooth"} />
+        <Switch
+          size="lg"
+          onChange={toggleColorMode}
+          colorScheme="blackAlpha"
+          scrollBehavior={"smooth"}
+        />
         <BiSun color={!color} size={20} />
         {colorMode === "light" ? "Dark" : "Light"}
       </HStack>
@@ -101,12 +106,9 @@ const Navbar = () => {
       pos={"fixed"}
       bottom={0}
       w={"full"}
-      bg={bg}
       borderTopRadius={10}
       boxShadow="xl"
-      zIndex={100}
       color={color}
-    
     >
       <Image
         borderRadius="full"
