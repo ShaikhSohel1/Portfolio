@@ -16,6 +16,7 @@ import {
   useDisclosure,
   VStack,
   Center,
+  UnorderedList,
 } from "@chakra-ui/react";
 import { Image, Heading, Box, Switch } from "@chakra-ui/react";
 import {
@@ -66,8 +67,8 @@ const Navbar = () => {
       <Heading size="md">Sohel Shaikh</Heading>
 
       <HStack spacing={8} width={"fit-content"} bg={bg} rounded={"3xl"} p={3}>
-        <Link p={2} rounded={25} transition={"all 0.5s"} css={css}>
-          <BiHomeAlt2 color={color} size={20} />
+        <Link p={2} rounded={25} transition={"all 0.5s"} css={css} className="active:underline">
+          <BiHomeAlt2 color={color} size={20} className="active:underline"/>
         </Link>
         <Link p={2} rounded={25} transition={"all 0.5s"} css={css}>
           <BiUserPlus
@@ -76,8 +77,8 @@ const Navbar = () => {
             className="hover:ease-in-out 0.9s "
           />
         </Link>
-        <Link p={2} rounded={25} transition={"all 0.5s"} css={css}>
-          <BiLibrary color={color} size={20} />
+        <Link p={2} rounded={25} transition={"all 0.5s"} css={css}  >
+          <BiLibrary color={color} size={20}  />
         </Link>
         <Link p={2} rounded={25} transition={"all 0.5s"} css={css}>
           <GoMortarBoard color={color} size={20} />
