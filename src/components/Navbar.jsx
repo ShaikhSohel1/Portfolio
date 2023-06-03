@@ -29,6 +29,7 @@ import {
 } from "react-icons/bi";
 import { GoMortarBoard } from "react-icons/go";
 import { MdOutlineWorkOutline } from "react-icons/md";
+import profileUrl from "../assets/sohel.jpg"; // Tell webpack this JS file uses this image
 
 const Navbar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -56,7 +57,7 @@ const Navbar = () => {
       <Image
         borderRadius="full"
         boxSize="4rem"
-        src="https://bit.ly/dan-abramov"
+        src={profileUrl}
         alt="Dan Abramov"
         className="hover:animate-spin  " 
         cursor={"pointer"}   
@@ -115,7 +116,7 @@ const Navbar = () => {
       <Image
         borderRadius="full"
         boxSize="2.5rem"
-        src="https://bit.ly/dan-abramov"
+        src={profileUrl}
         alt="Dan Abramov"
         className="hover:animate-spin"
         cursor={"pointer"}
