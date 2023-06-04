@@ -198,8 +198,9 @@ const Banner = () => {
           fontWeight={"light"}
           fontSize={[13, 13, 13, 20]}
           textOverflow={"ellipsis"}
-          w={"-moz-min-content"}
-          justifySelf={"center"}
+          size={"md"}
+          alignItems={"center"}
+          p={3}
         >
           I&apos;m creative Fullstack Developer based in Pune, <br />
           and I&apos;m very passionate and dedicated to my work .

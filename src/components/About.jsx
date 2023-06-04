@@ -1,18 +1,31 @@
 /* eslint-disable no-unused-vars */
-import { VStack, Heading, Text, HStack, Image } from "@chakra-ui/react";
+import {
+  VStack,
+  Heading,
+  Text,
+  HStack,
+  Image,
+  Button,
+  Box,
+  CircularProgress,
+  CircularProgressLabel,
+} from "@chakra-ui/react";
 import { color } from "framer-motion";
 import { useState } from "react";
 import React from "react";
 import { useColorMode, useColorModeValue } from "@chakra-ui/react";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import "../App.css";
+import { IoDocumentOutline } from "react-icons/io5";
 import devUrl from "../assets/devProfile.png";
 
 const About = () => {
   const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 700);
   const { colorMode, toggleColorMode } = useColorMode();
-  const bg = useColorModeValue("#333333", "white");
+  const bg = useColorModeValue("#333333", "#F7FAFC");
+  const bg1 = useColorModeValue("#F7FAFC", "#333333");
   const color = useColorModeValue("white", "black");
+  const color1 = useColorModeValue("black", "white");
   const css = {
     "&:hover": {
       transform: "scale(1.5)",
@@ -35,10 +48,9 @@ const About = () => {
       w={"full"}
       h={"full"}
       mt={"20"}
-    alignContent={"center"}
-    // justifyContent={"space-evenly"}
-    gap={10}
-
+      alignContent={"center"}
+      // justifyContent={"space-evenly"}
+      gap={10}
     >
       <VStack>
         <Text
@@ -68,36 +80,203 @@ const About = () => {
           About Me
         </Text>
       </VStack>
-      <HStack justifyContent={"space-evenly"} gap={[20,20,20,30,300]}>
+      <HStack justifyContent={"space-evenly"} gap={[20, 20, 20, 30, 300]}>
         <Image
           src={devUrl}
           alt="Sohel Shaikh"
-          boxSize={[200,200,200,350,400]}
+          // boxSize={[200,200,200,350,500]}
+          width={["sm", "sm", "2xs", "md"]}
+          height={["sm", "sm", "2xs", "md"]}
           bg={bg}
           className="drop"
         />
-        <VStack>
+        <VStack gap={10}>
+          {/* 3 small card showing experience work and support  */}
+
+          <HStack gap={5} alignSelf={"start"}>
+
+            
+              <Box boxSize={"28"} bg={bg1} color={color1} rounded={"lg"} p={5} borderWidth={"thin"}>
+                <VStack>
+                  <CircularProgress value={100} color="green.600">
+                    <CircularProgressLabel>24/7</CircularProgressLabel>
+                  </CircularProgress>
+                  <Heading  fontSize={["sm", "sm", "sm", "lg"]}>Support </Heading>
+                </VStack>
+            </Box>
+            <Box boxSize={"28"} bg={bg1} color={color1} rounded={"lg"} p={5} borderWidth={"thin"}>
+              <VStack>
+                <CircularProgress value={40} color="green.600">
+                  <CircularProgressLabel>40+</CircularProgressLabel>
+                </CircularProgress>
+              <Heading  fontSize={["sm", "sm", "sm", "lg"]}>Projects</Heading>
+              </VStack>
+            </Box>
+            
+              <Box boxSize={"28"} bg={bg1} color={color1} rounded={"lg"} p={5}  borderWidth={"thin"}>
+                <VStack>
+                  <CircularProgress value={10} color="green.600">
+                    <CircularProgressLabel>1+</CircularProgressLabel>
+                  </CircularProgress>
+                  <Heading  fontSize={["sm", "sm", "sm", "lg"]}>Experience</Heading>
+                </VStack>
+
+            </Box>
+          </HStack>
           <Text
-            fontSize={["sm", "sm", "sm","lg"]}
+            fontSize={["sm", "sm", "sm", "lg"]}
             bg={bg}
             bgClip="text"
             fontWeight="medium"
-            fontFamily={"monospace"}
+            fontFamily={"revert-layer"}
             textAlign={"start"}
             // textShadow="2px 0 currentcolor"
-            width={["sm", "sm", "sm","lg"]}
+            width={["sm", "sm", "sm", "lg"]}
             letterSpacing={"tight"}
-
-            
-            
           >
-           {aboutText}
+            {aboutText}
           </Text>
+          {/* Button For Cv */}
+          <Button
+            className="btn"
+            colorScheme={"whatsapp"}
+            _hover={{
+              transform: "scale(0.95)",
+              opacity: "0.8",
+              transitionDelay: "0.1s",
+            }}
+            variant="solid"
+            size="lg"
+            leftIcon={<IoDocumentOutline />}
+            as="a"
+            href="../assets/resume.pdf"
+            target="_blank"
+            download
+            roundedBottomStart={"3xl"}
+            roundedTopEnd={"3xl"}
+            alignSelf={"start"}
+          >
+            Resume
+          </Button>
         </VStack>
       </HStack>
     </VStack>
-  ) : (
-    <div>Hello</div>
+  ) : 
+  // For Mobile View
+  (
+    <VStack
+      justifyContent={"center"}
+      alignItems={"center"}
+      p={5}
+      spacing={5}
+      w={"full"}
+      h={"full"}
+      mt={"20"}
+      alignContent={"center"}
+      // justifyContent={"space-evenly"}
+      gap={10}
+    >
+      <VStack>
+        <Text
+
+          fontSize={"sm"}
+          bg={bg}
+          bgClip="text"
+          fontWeight="light"
+          fontFamily={"monospace"}
+          textAlign={"center"}
+          textShadow="2px 0 currentcolor"
+        >
+          Get To Know
+        </Text>
+         <Text
+          fontSize={"4xl"} 
+          bg={bg}
+          bgClip="text"
+          fontWeight="extrabold"
+          fontFamily={"monospace"}
+          textAlign={"center"}
+          textShadow="2px 0 currentcolor"
+          textDecoration={"underline"}
+          textDecorationColor={bg}
+        >
+          About Me
+        </Text>
+      </VStack>
+      <VStack gap={10}>
+        <Image src={devUrl} alt="Sohel Shaikh" boxSize={"2xs"} bg={bg} className="drop" />
+        <VStack gap={10}>
+          {/* 3 small card showing experience work and support  */}
+          <VStack gap={5} alignSelf={"centre"}>
+            <Box boxSize={"28"} bg={bg1} color={color1} rounded={"lg"} p={5} borderWidth={"thin"}>
+              <VStack>
+                <CircularProgress value={100} color="green.600">
+                  <CircularProgressLabel>24/7</CircularProgressLabel>
+                </CircularProgress>
+                <Heading  fontSize={["sm", "sm", "sm", "lg"]}>Support </Heading>
+              </VStack>
+            </Box>
+            <Box boxSize={"28"} bg={bg1} color={color1} rounded={"lg"} p={5} borderWidth={"thin"}>
+              <VStack>
+                <CircularProgress value={40} color="green.600">
+                  <CircularProgressLabel>40+</CircularProgressLabel>
+                </CircularProgress>
+              <Heading  fontSize={["sm", "sm", "sm", "lg"]}>Projects</Heading>
+              </VStack>
+            </Box>
+            <Box boxSize={"28"} bg={bg1} color={color1} rounded={"lg"} p={5} borderWidth={"thin"}>
+              <VStack>
+                <CircularProgress value={10} color="green.600">
+                  <CircularProgressLabel>1+</CircularProgressLabel>
+                </CircularProgress>
+                <Heading  fontSize={["sm", "sm", "sm", "lg"]}>Experience</Heading>
+              </VStack>
+            </Box>
+          </VStack>
+          <Text
+            fontSize={["sm", "sm", "sm", "lg"]}
+            bg={bg}
+            bgClip="text"
+            fontWeight="medium"
+            fontFamily={"revert-layer"}
+            textAlign={"center"}
+            // textShadow="2px 0 currentcolor"
+            width={["sm", "sm", "sm", "lg"]}
+            letterSpacing={"tight"}
+            padding={"5"}
+            
+          >
+            {aboutText}
+          </Text>
+          {/* Button For Cv */}
+          <Button
+            className="btn"
+            colorScheme={"whatsapp"}
+            _hover={{
+              transform: "scale(0.95)",
+              opacity: "0.8",
+              transitionDelay: "0.1s",
+            }}
+            variant="solid"
+            size="lg"
+            leftIcon={<IoDocumentOutline />}
+            as="a"
+            href="../assets/resume.pdf"
+            target="_blank"
+            download
+            roundedBottomStart={"3xl"}
+            roundedTopEnd={"3xl"}
+            alignSelf={"centre"}
+          >
+            Resume
+          </Button>
+        </VStack>
+      </VStack>
+    </VStack>
+
+
+                           
+
   );
 };
 
