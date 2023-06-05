@@ -5,6 +5,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 html {
     scroll-behavior: smooth;
 }
@@ -12,4 +13,8 @@ html {
 body {
     font-family: 'Ubuntu', sans-serif;
   
+}
+
+*{
+    scroll-behavior: smooth;
 }

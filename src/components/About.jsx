@@ -18,6 +18,8 @@ import { useTypewriter, Cursor } from "react-simple-typewriter";
 import "../App.css";
 import { CgFileDocument } from "react-icons/cg";
 import devUrl from "../assets/devProfile.png";
+import { motion } from "framer-motion";
+import { fadeIn, staggerContainer } from "../utils/motion";
 
 const About = () => {
   const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 700);
@@ -40,6 +42,14 @@ const About = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
   return isLargeScreen ? (
+    <motion.div
+    variants={staggerContainer}
+     initial="hidden"
+    whileInView="show"
+    viewport={{once: false,amount:0.25}}
+      
+
+    >
     <VStack
       justifyContent={"center"}
       alignItems={"center"}
@@ -53,6 +63,11 @@ const About = () => {
       gap={10}
     >
       <VStack>
+      <motion.span
+        variants={fadeIn("down","tween", 0.2, 1)}
+        
+        >
+
         <Text
           fontSize={"sm"}
           bg={bg}
@@ -79,8 +94,14 @@ const About = () => {
         >
           About Me
         </Text>
+        </motion.span>
       </VStack>
       <HStack justifyContent={"space-evenly"} gap={[20, 20, 20, 30, 300]}>
+      <motion.div
+        variants={fadeIn("right","tween", 0.2, 1)}
+        
+        >
+
         <Image
           src={devUrl}
           alt="Sohel Shaikh"
@@ -90,8 +111,14 @@ const About = () => {
           // bg={bg}
           className="drop"
         />
+        </motion.div>
+
         <VStack gap={10}>
           {/* 3 small card showing experience work and support  */}
+          <motion.div
+        variants={fadeIn("left","tween", 0.2, 1)}
+        
+        >
 
           <HStack gap={5} alignSelf={"start"}>
 
@@ -123,6 +150,12 @@ const About = () => {
 
             </Box>
           </HStack>
+          </motion.div>
+          <motion.span
+        variants={fadeIn("up","tween", 0.2, 1)}
+        
+        >
+
           <Text
             fontSize={["sm", "sm", "sm", "lg"]}
             bg={bg}
@@ -136,7 +169,13 @@ const About = () => {
           >
             {aboutText}
           </Text>
+          </motion.span>
           {/* Button For Cv */}
+          <motion.span
+        variants={fadeIn("up","tween", 0.2, 1)}
+        
+        >
+
           <Button
             // className="btn"
             // colorScheme={"whatsapp"}
@@ -165,12 +204,21 @@ const About = () => {
           >
             Resume
           </Button>
+          </motion.span>
         </VStack>
       </HStack>
     </VStack>
+    </motion.div>
   ) : 
   // For Mobile View
   (
+    <motion.div
+    variants={staggerContainer}
+      initial="hidden"
+      whileInView="show"
+      viewport={{once: false,amount:0.25}}
+        >
+
     <VStack
       justifyContent={"center"}
       alignItems={"center"}
@@ -183,17 +231,22 @@ const About = () => {
       // justifyContent={"space-evenly"}
       gap={10}
     >
+      <motion.div
+        variants={fadeIn("right","tween", 0.2, 1)}
+        
+        >
+
       <VStack>
         <Text
 
-          fontSize={"sm"}
-          bg={bg}
-          bgClip="text"
-          fontWeight="light"
-          fontFamily={"monospace"}
-          textAlign={"center"}
+fontSize={"sm"}
+bg={bg}
+bgClip="text"
+fontWeight="light"
+fontFamily={"monospace"}
+textAlign={"center"}
           textShadow="2px 0 currentcolor"
-        >
+          >
           Get To Know
         </Text>
          <Text
@@ -206,15 +259,26 @@ const About = () => {
           textShadow="2px 0 currentcolor"
           textDecoration={"underline"}
           textDecorationColor={bg}
-        >
+          >
           About Me
         </Text>
       </VStack>
+      </motion.div>
       <VStack gap={10}>
+      <motion.span
+        variants={fadeIn("left","tween", 0.2, 1)}
+        
+        >
+
         <Image src={devUrl} alt="Sohel Shaikh" boxSize={"2xs"} bg={bg} className="drop" />
+        </motion.span>
         <VStack gap={10}>
           {/* 3 small card showing experience work and support  */}
           <VStack gap={5} alignSelf={"centre"}>
+          <motion.span
+        variants={fadeIn("rigth","tween", 0.2, 1)}
+        
+        >
             <Box boxSize={"28"} bg={bg1} color={color1} rounded={"lg"} p={5} borderWidth={"thin"}>
               <VStack>
                 <CircularProgress value={100} color="green.600">
@@ -223,6 +287,11 @@ const About = () => {
                 <Heading  fontSize={["sm", "sm", "sm", "lg"]}>Support </Heading>
               </VStack>
             </Box>
+            </motion.span>
+            <motion.span
+        variants={fadeIn("left","tween", 0.2, 1)}
+        
+        >
             <Box boxSize={"28"} bg={bg1} color={color1} rounded={"lg"} p={5} borderWidth={"thin"}>
               <VStack>
                 <CircularProgress value={40} color="green.600">
@@ -231,6 +300,11 @@ const About = () => {
               <Heading  fontSize={["sm", "sm", "sm", "lg"]}>Projects</Heading>
               </VStack>
             </Box>
+            </motion.span>
+            <motion.span
+        variants={fadeIn("rigth","tween", 0.2, 1)}
+        
+        >
             <Box boxSize={"28"} bg={bg1} color={color1} rounded={"lg"} p={5} borderWidth={"thin"}>
               <VStack>
                 <CircularProgress value={10} color="green.600">
@@ -239,7 +313,13 @@ const About = () => {
                 <Heading  fontSize={["sm", "sm", "sm", "lg"]}>Experience</Heading>
               </VStack>
             </Box>
+            </motion.span>
           </VStack>
+          {/* Text About Me */}
+          <motion.span
+        variants={fadeIn("left","tween", 0.2, 1)}
+        
+        >
           <Text
             fontSize={["sm", "sm", "sm", "lg"]}
             bg={bg}
@@ -256,34 +336,37 @@ const About = () => {
           >
             {aboutText}
           </Text>
+          </motion.span>
           {/* Button For Cv */}
           <Button
             className="Btn"
             color={color}
-          css={ {
-            background: "linear-gradient( to right,#44ea76, #39fad7);)",
+            css={ {
+              background: "linear-gradient( to right,#44ea76, #39fad7);)",
           }}
-            _hover={{
-              transform: "scale(0.95)",
-              opacity: "0.8",
-              transitionDelay: "0.1s",
-            }}
-            variant="solid"
-            size="lg"
-            leftIcon={<CgFileDocument />}
-            as="a"
-            href="../assets/resume.pdf"
-            target="_blank"
-            download
-            alignSelf={"centre"}
-            rounded={"full"}
+          _hover={{
+            transform: "scale(0.95)",
+            opacity: "0.8",
+            transitionDelay: "0.1s",
+          }}
+          variant="solid"
+          size="lg"
+          leftIcon={<CgFileDocument />}
+          as="a"
+          href="../assets/resume.pdf"
+          target="_blank"
+          download
+          alignSelf={"centre"}
+          rounded={"full"}
           >
             Resume
           </Button>
+          
         </VStack>
       </VStack>
     </VStack>
 
+            </motion.div>
 
                            
 

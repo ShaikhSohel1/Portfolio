@@ -20,6 +20,11 @@ import { BsInstagram, BsSendPlus } from "react-icons/bs";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import "../App.css";
 import scrollUrl from "../assets/scroll.gif";
+import { motion, useAnimation } from "framer-motion";
+import "../utils/motion.js";
+import { fadeIn, staggerContainer } from "../utils/motion.js";
+
+
 
 const Banner = () => {
   const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 700);
@@ -45,7 +50,10 @@ const Banner = () => {
     loop: 1,
     cursorStyle: "|",
   });
-  //to set width of screen using useEffect
+
+
+
+    //to set width of screen using useEffect
   React.useEffect(() => {
     const handleResize = () => setIsLargeScreen(window.innerWidth >= 700);
     window.addEventListener("resize", handleResize);
@@ -53,6 +61,14 @@ const Banner = () => {
   }, []);
 
   return isLargeScreen ? (
+    <motion.div
+    variants={staggerContainer}
+     initial="hidden"
+    whileInView="show"
+    viewport={{once: false,amount:0.25}}
+      
+
+    >
     <VStack gap={300}>
       <HStack
         justifyItems={"center"}
@@ -64,6 +80,12 @@ const Banner = () => {
         mt={[20, 30, 100]}
         alignItems={"center"}
       >
+        <motion.div
+        variants={fadeIn("right","tween", 0.2, 1)}
+        
+        >
+
+        
         <VStack
           spacing={"16"}
           p={5}
@@ -90,8 +112,11 @@ const Banner = () => {
             <AiOutlineTwitter size={20} />
           </Link>
         </VStack>
+        </motion.div>
 
+        <motion.div variants={fadeIn("up","tween",0.3,1)}>
         <VStack alignItems={"flex-start"} gap={10}>
+          
           <Text
             fontFamily={"serif"}
             fontWeight={"bold"}
@@ -128,6 +153,13 @@ const Banner = () => {
             <span className="span">Hire Me</span>
           </button>
         </VStack>
+        </motion.div>
+
+        <motion.div
+        variants={fadeIn("left","tween", 0.3, 1)}
+        
+        >
+
         <VStack spacing={5} p={5} rounded={10} padding={2}>
           <div className="card">
             <div className="circle"></div>
@@ -135,15 +167,26 @@ const Banner = () => {
             <div className="card-inner"></div>
           </div>
         </VStack>
+        </motion.div>
       </HStack>
       <HStack>
         <div className="mouse"></div>
       </HStack>
     </VStack>
+    </motion.div>
   ) : (
     //For Mobile View
-    <>
+    <motion.div
+    variants={staggerContainer}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: false, amount: 0.25 }}
+    >
       <HStack m={10}>
+        <motion.span
+          variants={fadeIn("down", "tween", 0.3, 1)}
+          >
+
         <VStack spacing={"16"} p={5} rounded={20} padding={3} h={"full"}>
           <div className="card">
             <div className="circle"></div>
@@ -151,6 +194,9 @@ const Banner = () => {
             <div className="card-inner"></div>
           </div>
         </VStack>
+        </motion.span>
+      
+      
         <VStack
           spacing={"16"}
           p={5}
@@ -161,7 +207,8 @@ const Banner = () => {
           borderBottomColor={bg}
           borderWidth={3}
           borderTopColor={bg}
-        >
+          >
+            
           <Link css={css} transition={"all 0.5s"}>
             <AiFillGithub size={20} />
           </Link>
@@ -176,8 +223,11 @@ const Banner = () => {
           <Link css={css} transition={"all 0.5s"}>
             <AiOutlineTwitter size={20} />
           </Link>
+            
         </VStack>
+        
       </HStack>
+      <motion.div variants={fadeIn("up","tween",0.3,1)}>
       <VStack
         gap={10}
         justifyContent={"center"}
@@ -191,7 +241,7 @@ const Banner = () => {
         </Text>
 
         <Text fontFamily={"cursive"} fontWeight={"extrabold"} fontSize={25}>
-          {text}
+          {text}<Cursor cursorColor="red" />
         </Text>
 
         {/* About  */}
@@ -215,7 +265,8 @@ const Banner = () => {
           <span className="span">Hire Me</span>
         </button>
       </VStack>
-    </>
+      </motion.div>
+    </motion.div>
   );
 };
 

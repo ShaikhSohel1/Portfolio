@@ -19,6 +19,7 @@ import {
   UnorderedList,
 } from "@chakra-ui/react";
 import { Image, Heading, Box, Switch } from "@chakra-ui/react";
+import {motion} from "framer-motion";
 import {
   BiHomeAlt2,
   BiUserPlus,
@@ -31,8 +32,13 @@ import {
 import { GoMortarBoard } from "react-icons/go";
 import { MdOutlineWorkOutline } from "react-icons/md";
 import profileUrl from "../assets/sohel.jpg"; // Tell webpack this JS file uses this image
+import "../utils/motion.js";
+import { MotionConfig } from "framer-motion";
+import { headerVariants } from "../utils/motion.js";
 
 const Navbar = () => {
+ 
+
   const { colorMode, toggleColorMode } = useColorMode();
   const bg = useColorModeValue("#333333", "white");
   const color = useColorModeValue("white", "black");
@@ -54,6 +60,13 @@ const Navbar = () => {
   }, []);
 
   return isLargeScreen ? (
+    <motion.div
+    initial="hidden"
+    whileInView="show"
+    variants={headerVariants}
+    viewport={{once:false, amount:0.25 }}
+    >
+
     <HStack justifyContent={"space-evenly"} p={4}>
       <Image
         borderRadius="full"
@@ -62,7 +75,7 @@ const Navbar = () => {
         alt="Dan Abramov"
         className="hover:animate-spin  " 
         cursor={"pointer"}   
-      />
+        />
 
       <Heading size="md">Sohel Shaikh</Heading>
 
@@ -75,13 +88,13 @@ const Navbar = () => {
             color={color}
             size={20}
             className="hover:ease-in-out 0.9s "
-          />
-        </Link>
-        <Link p={2} rounded={25} transition={"all 0.5s"} css={css}  >
-          <BiLibrary color={color} size={20}  />
+            />
         </Link>
         <Link p={2} rounded={25} transition={"all 0.5s"} css={css}>
           <GoMortarBoard color={color} size={20} />
+        </Link>
+        <Link p={2} rounded={25} transition={"all 0.5s"} css={css}  >
+          <BiLibrary color={color} size={20}  />
         </Link>
         <Link p={2} rounded={25} transition={"all 0.5s"} css={css}>
           <MdOutlineWorkOutline color={color} size={20} />
@@ -98,12 +111,17 @@ const Navbar = () => {
           onChange={toggleColorMode}
           colorScheme="blackAlpha"
           scrollBehavior={"smooth"}
-        />
+          />
         <BiSun color={!color} size={20} />
         {colorMode === "light" ? "Dark" : "Light"}
       </HStack>
     </HStack>
-  ) : (
+    </motion.div>
+  ) : 
+  // Mobile View of header component
+  (
+   
+      
     <HStack
       justifyContent={"space-between"}
       p={4}
@@ -112,8 +130,8 @@ const Navbar = () => {
       borderTopRadius={10}
       boxShadow="xl"
       color={color}
- 
-    >
+      
+      >
       <Image
         borderRadius="full"
         boxSize="2.5rem"
@@ -121,7 +139,7 @@ const Navbar = () => {
         alt="Dan Abramov"
         className="hover:animate-spin"
         cursor={"pointer"}
-      />
+        />
       <Button
         pos={"fixed"}
         right={5}
@@ -137,7 +155,7 @@ const Navbar = () => {
         transform={"translateX(-50%,-50%)"}
         zIndex={100}
         // mb={10}
-      >
+        >
         <BiCategory size={"35"} color={color} />
       </Button>
 
@@ -155,7 +173,7 @@ const Navbar = () => {
                   size="lg"
                   onChange={toggleColorMode}
                   colorScheme="blackAlpha"
-                />
+                  />
                 <BiSun color={!color} size={20} />
                 {colorMode === "light" ? "Dark" : "Light"}
               </HStack>
@@ -171,7 +189,7 @@ const Navbar = () => {
                       color={color}
                       size={20}
                       className="hover:ease-in-out 0.9s "
-                    />
+                      />
                   </Link>
                 </Button>
                 <Button color={color} bg={bg}>
@@ -202,6 +220,7 @@ const Navbar = () => {
         </DrawerContent>
       </Drawer>
     </HStack>
+                     
   );
 };
 
