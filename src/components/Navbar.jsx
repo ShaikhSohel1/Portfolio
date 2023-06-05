@@ -109,10 +109,10 @@ const Navbar = () => {
       p={4}
       pos={"fixed"}
       bottom={0}
-      w={"full"}
       borderTopRadius={10}
       boxShadow="xl"
       color={color}
+ 
     >
       <Image
         borderRadius="full"
@@ -124,10 +124,10 @@ const Navbar = () => {
       />
       <Button
         pos={"fixed"}
-        right={0}
+        right={5}
         bg={bg}
         p={0}
-        w={100}
+        w={50}
         h={10}
         boxShadow="xl"
         borderEndRadius={"full"}
@@ -136,7 +136,7 @@ const Navbar = () => {
         onClick={onOpen}
         transform={"translateX(-50%,-50%)"}
         zIndex={100}
-        mb={10}
+        // mb={10}
       >
         <BiCategory size={"35"} color={color} />
       </Button>

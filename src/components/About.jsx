@@ -16,7 +16,7 @@ import React from "react";
 import { useColorMode, useColorModeValue } from "@chakra-ui/react";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import "../App.css";
-import { IoDocumentOutline } from "react-icons/io5";
+import { CgFileDocument } from "react-icons/cg";
 import devUrl from "../assets/devProfile.png";
 
 const About = () => {
@@ -87,7 +87,7 @@ const About = () => {
           // boxSize={[200,200,200,350,500]}
           width={["sm", "sm", "2xs", "md"]}
           height={["sm", "sm", "2xs", "md"]}
-          bg={bg}
+          // bg={bg}
           className="drop"
         />
         <VStack gap={10}>
@@ -138,23 +138,30 @@ const About = () => {
           </Text>
           {/* Button For Cv */}
           <Button
-            className="btn"
-            colorScheme={"whatsapp"}
+            // className="btn"
+            // colorScheme={"whatsapp"}
             _hover={{
               transform: "scale(0.95)",
               opacity: "0.8",
               transitionDelay: "0.1s",
             }}
-            variant="solid"
+            css={
+              {
+
+                background: "linear-gradient( to right,#44ea76, #39fad7);)",
+              }
+            }
+            // variant="solid"
             size="lg"
-            leftIcon={<IoDocumentOutline />}
+            leftIcon={<CgFileDocument size={25} />}
             as="a"
             href="../assets/resume.pdf"
             target="_blank"
             download
-            roundedBottomStart={"3xl"}
-            roundedTopEnd={"3xl"}
+            p={8}
+            rounded={10}
             alignSelf={"start"}
+            className="Btn"
           >
             Resume
           </Button>
@@ -240,9 +247,10 @@ const About = () => {
             fontWeight="medium"
             fontFamily={"revert-layer"}
             textAlign={"center"}
-            // textShadow="2px 0 currentcolor"
-            width={["sm", "sm", "sm", "lg"]}
+            textShadow="2px 0 currentcolor"
+            // width={["sm", "sm", "sm", "lg"]}
             letterSpacing={"tight"}
+            
             padding={"5"}
             
           >
@@ -250,8 +258,11 @@ const About = () => {
           </Text>
           {/* Button For Cv */}
           <Button
-            className="btn"
-            colorScheme={"whatsapp"}
+            className="Btn"
+            color={color}
+          css={ {
+            background: "linear-gradient( to right,#44ea76, #39fad7);)",
+          }}
             _hover={{
               transform: "scale(0.95)",
               opacity: "0.8",
@@ -259,14 +270,13 @@ const About = () => {
             }}
             variant="solid"
             size="lg"
-            leftIcon={<IoDocumentOutline />}
+            leftIcon={<CgFileDocument />}
             as="a"
             href="../assets/resume.pdf"
             target="_blank"
             download
-            roundedBottomStart={"3xl"}
-            roundedTopEnd={"3xl"}
             alignSelf={"centre"}
+            rounded={"full"}
           >
             Resume
           </Button>

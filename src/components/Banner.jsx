@@ -35,7 +35,9 @@ const Banner = () => {
     words: ["-Full Stack Developer", "-Student", "-Designer", "-Freelancer"],
     loop: 0,
     cursorStyle: "|",
-    deleteSpeed: 50,
+    deleteSpeed: 30,
+    smooth: true,
+    // slowMo: 50,
   });
 
   const [textHead] = useTypewriter({
@@ -142,7 +144,7 @@ const Banner = () => {
     //For Mobile View
     <>
       <HStack m={10}>
-        <VStack spacing={5} p={5} rounded={10} padding={2} mr={10}>
+        <VStack spacing={"16"} p={5} rounded={20} padding={3} h={"full"}>
           <div className="card">
             <div className="circle"></div>
             <div className="circle"></div>
@@ -189,7 +191,7 @@ const Banner = () => {
         </Text>
 
         <Text fontFamily={"cursive"} fontWeight={"extrabold"} fontSize={25}>
-          {text} <Cursor cursorColor="red" />
+          {text}
         </Text>
 
         {/* About  */}
@@ -200,7 +202,7 @@ const Banner = () => {
           textOverflow={"ellipsis"}
           size={"md"}
           alignItems={"center"}
-          p={3}
+          // p={3}
         >
           I&apos;m creative Fullstack Developer based in Pune, <br />
           and I&apos;m very passionate and dedicated to my work .
