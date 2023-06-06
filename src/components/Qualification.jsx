@@ -39,11 +39,11 @@ const Qualification = () => {
     <VStack 
     p={4}
     spacing={4}
-    borderRadius="md"
-    boxShadow="md"
+    // borderRadius="md"
+    // boxShadow="md"
     mt={'56'}
     textAlign="center"
-    textDecoration={'underline'}
+    // textDecoration={'underline'}
 
     >
       <Heading>

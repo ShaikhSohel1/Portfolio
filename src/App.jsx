@@ -7,6 +7,7 @@ import Navbar from './components/Navbar';
 import { useColorMode, useColorModeValue } from "@chakra-ui/react";
 import React, { useState } from "react";
 import Qualification from './components/Qualification';
+import Skills from './components/Skills';
 
 
 
@@ -19,6 +20,7 @@ function App() {
    <Banner />
    <About />
    <Qualification />
+   <Skills />
     </>
   )
 }
