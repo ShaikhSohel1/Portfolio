@@ -9,6 +9,7 @@ import {
   Box,
   CircularProgress,
   CircularProgressLabel,
+  Center,
 } from "@chakra-ui/react";
 import { color } from "framer-motion";
 import { useState } from "react";
@@ -53,7 +54,7 @@ const About = () => {
     <VStack
       justifyContent={"center"}
       alignItems={"center"}
-      p={5}
+      // p={5}
       spacing={5}
       w={"full"}
       h={"full"}
@@ -96,11 +97,11 @@ const About = () => {
         </Text>
         </motion.span>
       </VStack>
-      <HStack justifyContent={"space-evenly"} gap={[20, 20, 20, 30, 300]}>
-      <motion.div
+      <HStack justifyContent={"space-evenly"} gap={[20, 20, 20, 30, 300]} alignContent={"center"}>
+      {/* <motion.div
         variants={fadeIn("right","tween", 0.2, 1)}
         
-        >
+        > */}
 
         <Image
           src={devUrl}
@@ -111,13 +112,13 @@ const About = () => {
           // bg={bg}
           className="drop"
         />
-        </motion.div>
+        {/* </motion.div> */}
 
         <VStack gap={10}>
           {/* 3 small card showing experience work and support  */}
           <motion.div
         variants={fadeIn("left","tween", 0.2, 1)}
-        
+        className="self-start"
         >
 
           <HStack gap={5} alignSelf={"start"}>
@@ -173,6 +174,7 @@ const About = () => {
           {/* Button For Cv */}
           <motion.span
         variants={fadeIn("up","tween", 0.2, 1)}
+        className="self-start"
         
         >
 
@@ -216,7 +218,7 @@ const About = () => {
     variants={staggerContainer}
       initial="hidden"
       whileInView="show"
-      viewport={{once: false,amount:0.25}}
+      viewport={{once: true, threshold: 0.2}}
         >
 
     <VStack
@@ -265,13 +267,13 @@ textAlign={"center"}
       </VStack>
       </motion.div>
       <VStack gap={10}>
-      <motion.span
+      {/* <motion.span
         variants={fadeIn("left","tween", 0.2, 1)}
         
-        >
+        > */}
 
         <Image src={devUrl} alt="Sohel Shaikh" boxSize={"2xs"} bg={bg} className="drop" />
-        </motion.span>
+        {/* </motion.span> */}
         <VStack gap={10}>
           {/* 3 small card showing experience work and support  */}
           <VStack gap={5} alignSelf={"centre"}>

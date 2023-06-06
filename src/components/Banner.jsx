@@ -182,7 +182,7 @@ const Banner = () => {
       whileInView="show"
       viewport={{ once: false, amount: 0.25 }}
     >
-      <HStack m={10}>
+      <HStack m={10} justifyContent={"space-between"}>
         <motion.span
           variants={fadeIn("down", "tween", 0.3, 1)}
           >
@@ -252,10 +252,12 @@ const Banner = () => {
           textOverflow={"ellipsis"}
           size={"md"}
           alignItems={"center"}
+          justifyContent={"center"}
+        
           // p={3}
         >
-          I&apos;m creative Fullstack Developer based in Pune, <br />
-          and I&apos;m very passionate and dedicated to my work .
+          I&apos;m creative Fullstack Developer , 
+          and<br /> I&apos;m very passionate and dedicated to<br/> my work .
         </Text>
 
         <button className="Btn">
