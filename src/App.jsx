@@ -8,6 +8,7 @@ import { useColorMode, useColorModeValue } from "@chakra-ui/react";
 import React, { useState } from "react";
 import Qualification from './components/Qualification';
 import Skills from './components/Skills';
+import Projects from './components/Projects';
 
 
 
@@ -21,6 +22,7 @@ function App() {
    <About />
    <Qualification />
    <Skills />
+   <Projects />
     </>
   )
 }
