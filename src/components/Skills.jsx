@@ -32,6 +32,7 @@ import c from "../assets/c.png";
 import mysql from "../assets/mysql.png";
 import {motion} from "framer-motion"
 import { fadeIn, staggerContainer } from "../utils/motion";
+import { skillsBackend, skillsFramework, skillsFrontend } from "../utils/data";
 
 
 const Skills = () => {
@@ -89,106 +90,31 @@ const Skills = () => {
             <Heading>Frontend</Heading>
             <Text>Libraries</Text>
           </GridItem>
-          <GridItem w="100%" h="14">
+          {
+          skillsFrontend.map(({id , title ,desc , image }) =>{
+            return(
+              <GridItem w="100%" h="14" key={id}>
             <Box boxSize={"auto"}>
               <HStack>
-                {/* Logo For HTML5 */}
-                <Image src="https://img.icons8.com/color/48/000000/html-5--v1.png" />
+              
+                <Image src={image} />
 
                 <VStack>
                   <Text noOfLines={1} fontWeight={"bold"} fontSize={"inherit"}>
-                    HTML5
+                    {title}
                   </Text>
                   <Text noOfLines={1} fontSize={"2xs"}>
-                    Advanced
+                    {desc}
                   </Text>
                 </VStack>
               </HStack>
             </Box>
           </GridItem>
-          <GridItem w="auto" h="14">
-            <Box bgSize={"auto"}>
-              <HStack>
-                {/* <FaHtml5 className="text-6xl text-orange-400" size={50} /> */}
-                <Image src="https://img.icons8.com/color/48/000000/css3.png" />
-                <VStack>
-                  <Text noOfLines={1} fontWeight={"bold"}>
-                    CSS
-                  </Text>
-                  <Text noOfLines={1} fontSize={"2xs"}>
-                    Intermediate
-                  </Text>
-                </VStack>
-              </HStack>
-            </Box>
-          </GridItem>
-          <GridItem w="100%" h="14">
-            <Box>
-              <HStack>
-                <SiTailwindcss className="text-6xl text-blue-400" size={50} />
-                {/* <img src="https://img.icons8.com/color/48/000000/tailwind-css.png" /> */}
-                <VStack>
-                  <Text noOfLines={1} fontWeight={"bold"}>
-                    Tailwind
-                  </Text>
-                  <Text noOfLines={1} fontSize={"2xs"}>
-                    Intermediate
-                  </Text>
-                </VStack>
-              </HStack>
-            </Box>
-          </GridItem>
-          <GridItem w="100%" h="14">
-            <Box>
-              <HStack>
-                {/* <FaReact className="text-6xl text-blue-400" size={50} /> */}
-                <Image src="https://img.icons8.com/color/48/000000/react-native.png" />
-                <VStack>
-                  <Text noOfLines={1} fontWeight={"bold"}>
-                    React
-                  </Text>
-                  <Text noOfLines={1} fontSize={"2xs"}>
-                    Intermediate
-                  </Text>
-                </VStack>
-              </HStack>
-            </Box>
-          </GridItem>
+            )
+          } )
 
-          <GridItem w="100%" h="14">
-            <Box>
-              <HStack>
-                {/* <SiChakraui className="text-6xl text-[#41C7BF]" size={50} />
-                 */}
-                <Image src="https://img.icons8.com/color/48/000000/chakra-ui.png" />
-                <VStack>
-                  <Text noOfLines={1} fontWeight={"bold"}>
-                    ChakraUI
-                  </Text>
-                  <Text noOfLines={1} fontSize={"2xs"}>
-                    Intermediate
-                  </Text>
-                </VStack>
-              </HStack>
-            </Box>
-          </GridItem>
-
-          <GridItem w="100%" h="14">
-            <Box>
-              <HStack>
-                {/* <FaBootstrap className="text-6xl text-[#7411F6]" size={50}  /> */}
-                <Image src="https://img.icons8.com/color/48/000000/bootstrap.png" />
-                <VStack>
-                  <Text noOfLines={1} fontWeight={"bold"}>
-                    Bootstrap
-                  </Text>
-                  <Text noOfLines={1} fontSize={"2xs"}>
-                    Intermediate
-                  </Text>
-                </VStack>
-              </HStack>
-            </Box>
-          </GridItem>
+          }
+  
         </Grid>
         </motion.div>
 
@@ -215,105 +141,30 @@ const Skills = () => {
             <Heading>Backend</Heading>
             <Text>Database</Text>
           </GridItem>
-          <GridItem w="100%" h="14">
-            <Box>
+          {
+          skillsBackend.map(({id , title ,desc , image }) =>{
+            return(
+              <GridItem w="100%" h="14" key={id}>
+            <Box boxSize={"auto"}>
               <HStack>
-                {/* <FaCss3Alt className="text-6xl text-blue-500" size={50} />
-                 */}
-                <Image src="https://img.icons8.com/color/48/000000/nodejs.png" />
-                <VStack>
-                  <Text noOfLines={1} fontWeight={"bold"}>
-                    NodeJs
-                  </Text>
-                  <Text noOfLines={1} fontSize={"2xs"}>
-                    Intermediate
-                  </Text>
-                </VStack>
-              </HStack>
-            </Box>
-          </GridItem>
-          <GridItem w="100%" h="14">
-            <Box>
-              <HStack>
-                {/* <FaHtml5 className="text-6xl text-orange-400" size={50} /> */}
-                <Image src="https://img.icons8.com/color/48/000000/python--v1.png" />
-                <VStack>
-                  <Text noOfLines={1} fontWeight={"bold"}>
-                    Python
-                  </Text>
-                  <Text noOfLines={1} fontSize={"2xs"}>
-                    Intermediate
-                  </Text>
-                </VStack>
-              </HStack>
-            </Box>
-          </GridItem>
-          <GridItem w="100%" h="14">
-            <Box>
-              <HStack>
-                {/* <SiTailwindcss className="text-6xl text-blue-400" size={50} /> */}
-                <Image src="https://img.icons8.com/color/48/000000/c-programming.png" />
-                <VStack>
-                  <Text noOfLines={1} fontWeight={"bold"}>
-                    C
-                  </Text>
-                  <Text noOfLines={1} fontSize={"2xs"}>
-                    Intermediate
-                  </Text>
-                </VStack>
-              </HStack>
-            </Box>
-          </GridItem>
-          <GridItem w="100%" h="14">
-            <Box>
-              <HStack>
-                {/* <FaReact className="text-6xl text-blue-400" size={50} /> */}
-                <Image src="https://img.icons8.com/color/48/000000/java-coffee-cup-logo--v1.png" />
-                <VStack>
-                  <Text noOfLines={1} fontWeight={"bold"}>
-                    Java
-                  </Text>
-                  <Text noOfLines={1} fontSize={"2xs"}>
-                    Intermediate
-                  </Text>
-                </VStack>
-              </HStack>
-            </Box>
-          </GridItem>
+              
+                <Image src={image} />
 
-          <GridItem w="100%" h="14">
-            <Box>
-              <HStack>
-                {/* <FaBootstrap className="text-6xl text-[#7411F6]" size={50}  /> */}
-                <Image src="https://img.icons8.com/color/48/000000/mongodb.png" />
                 <VStack>
-                  <Text noOfLines={1} fontWeight={"bold"}>
-                    MongoDB
+                  <Text noOfLines={1} fontWeight={"bold"} fontSize={"inherit"}>
+                    {title}
                   </Text>
                   <Text noOfLines={1} fontSize={"2xs"}>
-                    Intermediate
+                    {desc}
                   </Text>
                 </VStack>
               </HStack>
             </Box>
           </GridItem>
+            )
+          } )
 
-          <GridItem w="100%" h="14">
-            <Box>
-              <HStack>
-                {/* <FaBootstrap className="text-6xl text-[#7411F6]" size={50}  /> */}
-                <Image src="https://img.icons8.com/color/48/000000/postgreesql.png" />
-                <VStack>
-                  <Text noOfLines={1} fontWeight={"bold"}>
-                    PostgreSql
-                  </Text>
-                  <Text noOfLines={1} fontSize={"2xs"}>
-                    Beginner
-                  </Text>
-                </VStack>
-              </HStack>
-            </Box>
-          </GridItem>
+          }
         </Grid>
         </motion.div>
         {/* Frameworks & Tools  */}
@@ -339,104 +190,30 @@ const Skills = () => {
             <Heading>Framework</Heading>
             <Text>Tools</Text>
           </GridItem>
-          <GridItem>
-            <HStack>
-              {/* NextJs Logo  */}
-              <Image src="https://img.icons8.com/color/48/000000/nextjs.png" />
-              <VStack>
-                <Text noOfLines={1} fontWeight={"bold"}>
-                  NextJs
-                </Text>
-                <Text noOfLines={1} fontSize={"2xs"}>
-                  Beginner
-                </Text>
-              </VStack>
-            </HStack>
-          </GridItem>
-          <GridItem w="100%" h="14">
-            <Box>
+          {
+          skillsFramework.map(({id , title ,desc , image }) =>{
+            return(
+              <GridItem w="100%" h="14" key={id}>
+            <Box boxSize={"auto"}>
               <HStack>
-                {/* <FaBootstrap className="text-6xl text-[#7411F6]" size={50}  /> */}
-                <Image src="https://img.icons8.com/color/48/000000/express-js.png" />
-                <VStack>
-                  <Text noOfLines={1} fontWeight={"bold"}>
-                    ExpressJs
-                  </Text>
-                  <Text noOfLines={1} fontSize={"2xs"}>
-                    Beginner
-                  </Text>
-                </VStack>
-              </HStack>
-            </Box>
-          </GridItem>
-          <GridItem w="100%" h="14">
-            <Box>
-              <HStack>
-                {/* <FaBootstrap className="text-6xl text-[#7411F6]" size={50}  /> */}
-                <Image src="https://img.icons8.com/color/48/000000/git.png" />
-                <VStack>
-                  <Text noOfLines={1} fontWeight={"bold"}>
-                    Git
-                  </Text>
-                  <Text noOfLines={1} fontSize={"2xs"}>
-                    Intermediate
-                  </Text>
-                </VStack>
-              </HStack>
-            </Box>
-          </GridItem>
-          <GridItem w="100%" h="14">
-            <Box>
-              <HStack>
-                {/* <FaBootstrap className="text-6xl text-[#7411F6]" size={50}  /> */}
-                {/* microsoft Azure logo  */}
-                <Image src="https://img.icons8.com/color/48/000000/azure-1.png" />
-                <VStack>
-                  <Text noOfLines={1} fontWeight={"bold"}>
-                    Azure
-                  </Text>
-                  <Text noOfLines={1} fontSize={"2xs"}>
-                    Beginner
-                  </Text>
-                </VStack>
-              </HStack>
-            </Box>
-          </GridItem>
-          <GridItem w="100%" h="14">
-            <Box>
-              <HStack>
-                {/* <FaBootstrap className="text-6xl text-[#7411F6]" size={50}  /> */}
-                {/* firebase logo  */}
-                <Image src="https://img.icons8.com/color/48/000000/firebase.png" />
-                <VStack>
-                  <Text noOfLines={1} fontWeight={"bold"}>
-                    Firebase
-                  </Text>
-                  <Text noOfLines={1} fontSize={"2xs"}>
-                    Beginner
-                  </Text>
-                </VStack>
-              </HStack>
-            </Box>
-          </GridItem>
+              
+                <Image src={image} />
 
-          <GridItem w="100%" h="14">
-            <Box>
-              <HStack>
-                {/* <FaBootstrap className="text-6xl text-[#7411F6]" size={50}  /> */}
-                {/*  Vercel logo  */}
-                <SiVercel size={40} />
                 <VStack>
-                  <Text noOfLines={1} fontWeight={"bold"}>
-                    Vercel
+                  <Text noOfLines={1} fontWeight={"bold"} fontSize={"inherit"}>
+                    {title}
                   </Text>
                   <Text noOfLines={1} fontSize={"2xs"}>
-                    Beginner
+                    {desc}
                   </Text>
                 </VStack>
               </HStack>
             </Box>
           </GridItem>
+            )
+          } )
+
+          }
         </Grid>
         </motion.div>
       </HStack>
@@ -467,7 +244,9 @@ viewport={{once: false,amount:0.25}}
           color={color}
           p={5}
           gridArea={"auto"}
+          w={"auto"}
           boxSize={"auto"}
+          h={"auto"}
           rounded={20}
           templateAreas={`"header header"
   `}
@@ -476,113 +255,34 @@ viewport={{once: false,amount:0.25}}
             <Heading>Frontend</Heading>
             <Text>Libraries</Text>
           </GridItem>
-          <GridItem w="100%" h="14">
-            <Box boxSize={"auto"}>
+          {
+          skillsFrontend.map(({id , title ,desc , image }) =>{
+            return(
+              <GridItem w="100%" h="auto" key={id} >
+            <Box boxSize={"auto"} >
               <HStack>
-                {/* Logo For HTML5 */}
-                <Image src="https://img.icons8.com/color/48/000000/html-5--v1.png" />
+              
+                <Image src={image} />
 
                 <VStack>
-                  <Text
-                    noOfLines={1}
-                    fontWeight={"bold"}
-                    fontSize={"12"}
-                    overflow={"scroll"}
-                  >
-                    HTML5
+                  <Text noOfLines={1} fontWeight={"bold"} fontSize={["2xs","inherit"]} >
+                    {title}
                   </Text>
-                  <Text noOfLines={1} fontSize={"2xs"} overflow={"scroll"}>
-                    Advanced
+                  <Text noOfLines={1} fontSize={"2xs"} >
+                    {desc}
                   </Text>
                 </VStack>
               </HStack>
             </Box>
           </GridItem>
-          <GridItem w="auto" h="14">
-            <Box bgSize={"auto"}>
-              <HStack>
-                {/* <FaHtml5 className="text-6xl text-orange-400" size={50} /> */}
-                <Image src="https://img.icons8.com/color/48/000000/css3.png" />
-                <VStack>
-                  <Text noOfLines={1} fontWeight={"bold"} fontSize={12}>
-                    CSS
-                  </Text>
-                  <Text noOfLines={1} fontSize={"2xs"}>
-                    Intermediate
-                  </Text>
-                </VStack>
-              </HStack>
-            </Box>
-          </GridItem>
-          <GridItem w="100%" h="14">
-            <Box>
-              <HStack>
-                <SiTailwindcss className="text-6xl text-blue-400" size={50} />
-                {/* <img src="https://img.icons8.com/color/48/000000/tailwind-css.png" /> */}
-                <VStack>
-                  <Text noOfLines={1} fontWeight={"bold"}>
-                    Tailwind
-                  </Text>
-                  <Text noOfLines={1} fontSize={"2xs"}>
-                    Intermediate
-                  </Text>
-                </VStack>
-              </HStack>
-            </Box>
-          </GridItem>
-          <GridItem w="100%" h="14">
-            <Box>
-              <HStack>
-                {/* <FaReact className="text-6xl text-blue-400" size={50} /> */}
-                <Image src="https://img.icons8.com/color/48/000000/react-native.png" />
-                <VStack>
-                  <Text noOfLines={1} fontWeight={"bold"}>
-                    React
-                  </Text>
-                  <Text noOfLines={1} fontSize={"2xs"}>
-                    Intermediate
-                  </Text>
-                </VStack>
-              </HStack>
-            </Box>
-          </GridItem>
+            )
+          } )
 
-          <GridItem w="100%" h="14">
-            <Box>
-              <HStack>
-                {/* <SiChakraui className="text-6xl text-[#41C7BF]" size={50} />
-                 */}
-                <Image src="https://img.icons8.com/color/48/000000/chakra-ui.png" />
-                <VStack>
-                  <Text noOfLines={1} fontWeight={"bold"}>
-                    ChakraUI
-                  </Text>
-                  <Text noOfLines={1} fontSize={"2xs"}>
-                    Intermediate
-                  </Text>
-                </VStack>
-              </HStack>
-            </Box>
-          </GridItem>
-
-          <GridItem w="100%" h="14">
-            <Box>
-              <HStack>
-                {/* <FaBootstrap className="text-6xl text-[#7411F6]" size={50}  /> */}
-                <Image src="https://img.icons8.com/color/48/000000/bootstrap.png" />
-                <VStack>
-                  <Text noOfLines={1} fontWeight={"bold"}>
-                    Bootstrap
-                  </Text>
-                  <Text noOfLines={1} fontSize={"2xs"}>
-                    Intermediate
-                  </Text>
-                </VStack>
-              </HStack>
-            </Box>
-          </GridItem>
+          }
         </Grid>
         </motion.div>
+
+
         {/* Backend  */}
         <motion.div
         variants={fadeIn("left","tween", 0.2, 1)}
@@ -606,105 +306,30 @@ viewport={{once: false,amount:0.25}}
             <Heading>Backend</Heading>
             <Text>Database</Text>
           </GridItem>
-          <GridItem w="100%" h="14">
-            <Box>
+          {
+          skillsBackend.map(({id , title ,desc , image }) =>{
+            return(
+              <GridItem w="100%" h="14" key={id}>
+            <Box boxSize={"auto"}>
               <HStack>
-                {/* <FaCss3Alt className="text-6xl text-blue-500" size={50} />
-                 */}
-                <Image src="https://img.icons8.com/color/48/000000/nodejs.png" />
-                <VStack>
-                  <Text noOfLines={1} fontWeight={"bold"}>
-                    NodeJs
-                  </Text>
-                  <Text noOfLines={1} fontSize={"2xs"}>
-                    Intermediate
-                  </Text>
-                </VStack>
-              </HStack>
-            </Box>
-          </GridItem>
-          <GridItem w="100%" h="14">
-            <Box>
-              <HStack>
-                {/* <FaHtml5 className="text-6xl text-orange-400" size={50} /> */}
-                <Image src="https://img.icons8.com/color/48/000000/python--v1.png" />
-                <VStack>
-                  <Text noOfLines={1} fontWeight={"bold"}>
-                    Python
-                  </Text>
-                  <Text noOfLines={1} fontSize={"2xs"}>
-                    Intermediate
-                  </Text>
-                </VStack>
-              </HStack>
-            </Box>
-          </GridItem>
-          <GridItem w="100%" h="14">
-            <Box>
-              <HStack>
-                {/* <SiTailwindcss className="text-6xl text-blue-400" size={50} /> */}
-                <Image src="https://img.icons8.com/color/48/000000/c-programming.png" />
-                <VStack>
-                  <Text noOfLines={1} fontWeight={"bold"}>
-                    C
-                  </Text>
-                  <Text noOfLines={1} fontSize={"2xs"}>
-                    Intermediate
-                  </Text>
-                </VStack>
-              </HStack>
-            </Box>
-          </GridItem>
-          <GridItem w="100%" h="14">
-            <Box>
-              <HStack>
-                {/* <FaReact className="text-6xl text-blue-400" size={50} /> */}
-                <Image src="https://img.icons8.com/color/48/000000/java-coffee-cup-logo--v1.png" />
-                <VStack>
-                  <Text noOfLines={1} fontWeight={"bold"}>
-                    Java
-                  </Text>
-                  <Text noOfLines={1} fontSize={"2xs"}>
-                    Intermediate
-                  </Text>
-                </VStack>
-              </HStack>
-            </Box>
-          </GridItem>
+              
+                <Image src={image} />
 
-          <GridItem w="100%" h="14">
-            <Box>
-              <HStack>
-                {/* <FaBootstrap className="text-6xl text-[#7411F6]" size={50}  /> */}
-                <Image src="https://img.icons8.com/color/48/000000/mongodb.png" />
                 <VStack>
-                  <Text noOfLines={1} fontWeight={"bold"}>
-                    MongoDB
+                  <Text noOfLines={1} fontWeight={"bold"} fontSize={["2xs","inherit"]}>
+                    {title}
                   </Text>
                   <Text noOfLines={1} fontSize={"2xs"}>
-                    Beginner
+                    {desc}
                   </Text>
                 </VStack>
               </HStack>
             </Box>
           </GridItem>
+            )
+          } )
 
-          <GridItem w="100%" h="14">
-            <Box>
-              <HStack>
-                {/* <FaBootstrap className="text-6xl text-[#7411F6]" size={50}  /> */}
-                <Image src="https://img.icons8.com/color/48/000000/postgreesql.png" />
-                <VStack>
-                  <Text noOfLines={1} fontWeight={"bold"}>
-                    PostgreSql
-                  </Text>
-                  <Text noOfLines={1} fontSize={"2xs"}>
-                    Intermediate
-                  </Text>
-                </VStack>
-              </HStack>
-            </Box>
-          </GridItem>
+          }
         </Grid>
         </motion.div>
 
@@ -730,104 +355,30 @@ viewport={{once: false,amount:0.25}}
             <Heading>Framework</Heading>
             <Text>Tools</Text>
           </GridItem>
-          <GridItem>
-            <HStack>
-              {/* NextJs Logo  */}
-              <Image src="https://img.icons8.com/color/48/000000/nextjs.png" />
-              <VStack>
-                <Text noOfLines={1} fontWeight={"bold"}>
-                  NextJs
-                </Text>
-                <Text noOfLines={1} fontSize={"2xs"}>
-                  Beginner
-                </Text>
-              </VStack>
-            </HStack>
-          </GridItem>
-          <GridItem w="100%" h="14">
-            <Box>
+          {
+          skillsFramework.map(({id , title ,desc , image }) =>{
+            return(
+              <GridItem w="100%" h="14" key={id}>
+            <Box boxSize={"auto"}>
               <HStack>
-                {/* <FaBootstrap className="text-6xl text-[#7411F6]" size={50}  /> */}
-                <Image src="https://img.icons8.com/color/48/000000/express-js.png" />
-                <VStack>
-                  <Text noOfLines={1} fontWeight={"bold"}>
-                    ExpressJs
-                  </Text>
-                  <Text noOfLines={1} fontSize={"2xs"}>
-                    Beginner
-                  </Text>
-                </VStack>
-              </HStack>
-            </Box>
-          </GridItem>
-          <GridItem w="100%" h="14">
-            <Box>
-              <HStack>
-                {/* <FaBootstrap className="text-6xl text-[#7411F6]" size={50}  /> */}
-                <Image src="https://img.icons8.com/color/48/000000/git.png" />
-                <VStack>
-                  <Text noOfLines={1} fontWeight={"bold"}>
-                    Git
-                  </Text>
-                  <Text noOfLines={1} fontSize={"2xs"}>
-                    Intermediate
-                  </Text>
-                </VStack>
-              </HStack>
-            </Box>
-          </GridItem>
-          <GridItem w="100%" h="14">
-            <Box>
-              <HStack>
-                {/* <FaBootstrap className="text-6xl text-[#7411F6]" size={50}  /> */}
-                {/* microsoft Azure logo  */}
-                <Image src="https://img.icons8.com/color/48/000000/azure-1.png" />
-                <VStack>
-                  <Text noOfLines={1} fontWeight={"bold"}>
-                    Azure
-                  </Text>
-                  <Text noOfLines={1} fontSize={"2xs"}>
-                    Beginner
-                  </Text>
-                </VStack>
-              </HStack>
-            </Box>
-          </GridItem>
+              
+                <Image src={image} />
 
-          <GridItem w="100%" h="14">
-            <Box>
-              <HStack>
-                {/* <FaBootstrap className="text-6xl text-[#7411F6]" size={50}  /> */}
-                {/*  Vercel logo  */}
-                <SiVercel size={40} />
                 <VStack>
-                  <Text noOfLines={1} fontWeight={"bold"}>
-                    Vercel
+                  <Text noOfLines={1} fontWeight={"bold"} fontSize={["2xs","inherit"]}>
+                    {title}
                   </Text>
                   <Text noOfLines={1} fontSize={"2xs"}>
-                    Beginner
+                    {desc}
                   </Text>
                 </VStack>
               </HStack>
             </Box>
           </GridItem>
-          <GridItem w="100%" h="14">
-            <Box>
-              <HStack>
-                {/* <FaBootstrap className="text-6xl text-[#7411F6]" size={50}  /> */}
-                {/* firebase logo  */}
-                <Image src="https://img.icons8.com/color/48/000000/firebase.png" />
-                <VStack>
-                  <Text noOfLines={1} fontWeight={"bold"}>
-                    Firebase
-                  </Text>
-                  <Text noOfLines={1} fontSize={"2xs"}>
-                    Intermediate
-                  </Text>
-                </VStack>
-              </HStack>
-            </Box>
-          </GridItem>
+            )
+          } )
+
+          }
         </Grid>
         </motion.div>
       </VStack>
