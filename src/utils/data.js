@@ -12,14 +12,17 @@ export const data =[
         desc: "Quest.io is a state-of-the-art platform that utilizes OpenAI API models to provide users with a seamless way to convert text into images, programming languages, and SQL queries.",
         github:'https://github.com/ShaikhSohel1/Quest.io',
         demoLink:'https://quest-io-five.vercel.app/',
+        techStack:"NextJS, TailwindCSS, FireBase,  OpenAI API",
+
     },
     {
         id: 2,
         title: "EvSpace",
         image:IMG2,
-        desc: "evSpace is all in one web application where you can findElectric vehicle charging stations and you can book An appointment for servicing of your electric vehicle.",
+        desc: "evSpace allow electric vehicle owners to reserve a charging station in advance for a specified date and time, Ensuring that the station is available when they need it. evSpace is designed to be a user-friendly platform, providing all the functionality of modern applications such as booking cancellation and payment options with Debit/Credit cards .",
         github:'https://github.com/ShaikhSohel1/evSpace',
         demoLink:'https://ev-space-vivekgunjal619-gmailcom.vercel.app/',
+        techStack:"NextJS, TailwindCSS, Firebase, Stripe, Google Maps API",
     },
 
     {
@@ -29,6 +32,8 @@ export const data =[
         desc: "The website Crypto.IO is a professional platform that offers real-time information and updates on cryptocurrencies. It functions as a reliable source for the latest details in the crypto market. Additionally, it provides comprehensive data on top crypto coins, enabling users to access individual coin information conveniently.",
         github:'https://github.com/ShaikhSohel1/Crypto.IO',
         demoLink:'https://crypto-io-pi.vercel.app/',
+        techStack:"ReactJS, ChakraUI, CoinGecko API",
+
     },
 
 ]

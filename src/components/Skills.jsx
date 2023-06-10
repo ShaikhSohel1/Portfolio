@@ -61,6 +61,7 @@ const Skills = () => {
      initial="hidden"
     whileInView="show"
     viewport={{once: false,amount:0.25}}
+    
       
 
     >
@@ -225,11 +226,12 @@ const Skills = () => {
 variants={staggerContainer}
  initial="hidden"
 whileInView="show"
-viewport={{once: false,amount:0.25}}
+viewport={{once: true,amount:0.25}}
+className="skills w-full"
   
 
 >
-    <VStack w={"auto"} justifyContent={"space-evenly"} gap={20}>
+    <VStack w={"full"} justifyContent={"space-evenly"} gap={20}>
       <Heading>Skills</Heading>
       <VStack gap={20} w={"auto"} mx={36} px={5}>
         {/* Frontend  */}

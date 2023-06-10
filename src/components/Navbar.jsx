@@ -124,25 +124,28 @@ const Navbar = () => {
       
     <HStack
       justifyContent={"space-between"}
-      p={4}
+      // p={4}
       pos={"fixed"}
-      bottom={0}
-      borderTopRadius={10}
+      top={0}
+      // left={0}
+      // borderTopRadius={10}
       boxShadow="xl"
       color={color}
+      w={"100%"}
       
       >
-      <Image
-        borderRadius="full"
-        boxSize="2.5rem"
-        src={profileUrl}
-        alt="Dan Abramov"
-        className="hover:animate-spin"
-        cursor={"pointer"}
-        />
+        <Image
+          borderRadius="full"
+          boxSize="2.5rem"
+          src={profileUrl}
+          alt="Sohel Shaikh"
+          className="hover:animate-spin"
+          cursor={"pointer"}
+          bottom={0}
+          />
       <Button
-        pos={"fixed"}
-        right={5}
+        // pos={"fixed"}
+        // right={"20"}
         bg={bg}
         p={0}
         w={50}

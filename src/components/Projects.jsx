@@ -71,7 +71,9 @@ const Projects = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  return (
+  return(
+
+    // Desktop Screen View
     <motion.div
       variants={staggerContainer}
       initial="hidden"
@@ -91,30 +93,53 @@ const Projects = () => {
       </VStack>
 
     
-      <div className="h-screen relative flex overflow-hiddem flex-col text-left md:flex-row max-w-full justify-evenly mx-auto item-centre ">
+      <div className="h-screen relative flex overflow-hiddem  text-left md:flex-row max-w-full justify-evenly mx-auto item-centre ">
         <swiper-container
           ref={swiperElRef}
           slides-per-view="1"
           navigation="true"
           pagination="true"
-          scrollbar="true"
+          scrollbar="false"
           lazy="true"
+          autoplay={{
+            delay: 5000,
+            disableOnInteraction: false,
+          }}
           className="mySwiper"
         >
-          {data.map(({ id, title, image, desc, github, demoLink }) => {
+          {data.map(({ id, title, image, desc, github, demoLink,techStack }) => {
             return (
               <>
                 <swiper-slide key={id}>
-                  <VStack mt={"56"}>
-                    <motion.div variants={fadeIn("down", "tween", 0.2, 1)}>
-                      <Image
-                        src={image}
-                        alt={title}
-                        borderRadius={"xl"}
-                        className="article-wrapper"
-                        h={"2xs"}
-                      />
-                    </motion.div>
+                  <VStack mt={"56"} key={id}>
+                    {isLargeScreen ? (
+                        <motion.div variants={fadeIn("down", "tween", 0.2, 1)}>
+                        <Image
+                          src={image}
+                          alt={title}
+                          borderRadius={"xl"}
+                          className="article-wrapper"
+                          h={"2xs"}
+
+                        />
+                         </motion.div>
+                      ) : ( 
+                        
+                        <motion.div variants={fadeIn("down", "tween", 0.2, 1)}>
+                        <Image
+                          src={image}
+                          alt={title}
+                          borderRadius={"xl"}
+                          className="article-wrapper"
+                          boxSize={"36"}
+
+                        />
+                         </motion.div>
+                      )
+                      
+                      }
+                  
+                   
                     <VStack
                       spacing="1"
                       className="project-info"
@@ -128,21 +153,22 @@ const Projects = () => {
                       <Text
                         noOfLines={6}
                         fontFamily={"cursive"}
-                        fontSize={"2xl"}
+                        // fontSize={"2xl"}
                         fontWeight={"light"}
                         fontStyle={"oblique"}
+                        fontSize={['smaller','small','medium','large','larger']}
                         
                       >
                         {desc}
                       </Text>
                       <Text className="project-type">
-                      Tech Stack : NextJs, Tailwind CSS, Firebase, Framer Motion, Chakra UI, SwiperJs
+                      {techStack}
                       </Text>
                       <HStack spacing={6}>
-                        <a href={github}>
+                        <a href={github} target="_blank" rel="noreferrer">
                           <AiFillGithub size={25} className="transition-all hover:scale-150 " />
                         </a>
-                        <a href={demoLink}>
+                        <a href={demoLink} target="_blank" rel="noreferrer">
                           <AiFillCloud size={25} className="transition-all hover:scale-150 "/>
                         </a>
                       </HStack>
@@ -208,7 +234,7 @@ const Projects = () => {
     </div>
 </article> */}
     </motion.div>
-  );
+  )
 };
 
 export default Projects;
