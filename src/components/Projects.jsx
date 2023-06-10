@@ -80,6 +80,7 @@ const Projects = () => {
       whileInView="show"
       viewport={{ once: false, amount: 0.25 }}
       className="mt-40"
+      id="projects"
     >
       
       <VStack>

@@ -66,6 +66,7 @@ const Banner = () => {
      initial="hidden"
     whileInView="show"
     viewport={{once: false,amount:0.25}}
+    id="banner"
       
 
     >
@@ -97,18 +98,18 @@ const Banner = () => {
           borderWidth={3}
           borderTopColor={bg}
         >
-          <Link css={css} transition={"all 0.5s"}>
+          <Link css={css} transition={"all 0.5s"} href="https://github.com/ShaikhSohel1" target="_blank">
             <AiFillGithub size={20} />
           </Link>
-          <Link css={css} transition={"all 0.5s"}>
+          <Link css={css} transition={"all 0.5s"} href="https://www.linkedin.com/in/sohel-shaikh-60018b274/" target="_blank">
             <AiOutlineLinkedin size={20} />
           </Link>
 
-          <Link css={css} transition={"all 0.5s"}>
+          <Link css={css} transition={"all 0.5s"} href="https://www.instagram.com/what_can_be_the_username/" target="_blank">
             <BsInstagram size={20} css={css} />
           </Link>
 
-          <Link css={css} transition={"all 0.5s"}>
+          <Link css={css} transition={"all 0.5s"} href="https://twitter.com/ZoroUchiha69?t=JuTafZZ1kBaSrejd3cTzMQ&s=09" target="_blank">
             <AiOutlineTwitter size={20} />
           </Link>
         </VStack>
@@ -181,6 +182,7 @@ const Banner = () => {
       initial="hidden"
       whileInView="show"
       viewport={{ once: false, amount: 0.25 }}
+      id="banner"
     >
       <HStack m={10} justifyContent={"space-between"}>
         <motion.span
@@ -209,18 +211,18 @@ const Banner = () => {
           borderTopColor={bg}
           >
             
-          <Link css={css} transition={"all 0.5s"}>
+            <Link css={css} transition={"all 0.5s"} href="https://github.com/ShaikhSohel1" target="_blank">
             <AiFillGithub size={20} />
           </Link>
-          <Link css={css} transition={"all 0.5s"}>
+          <Link css={css} transition={"all 0.5s"} href="https://www.linkedin.com/in/sohel-shaikh-60018b274/" target="_blank">
             <AiOutlineLinkedin size={20} />
           </Link>
 
-          <Link css={css} transition={"all 0.5s"}>
+          <Link css={css} transition={"all 0.5s"} href="https://www.instagram.com/what_can_be_the_username/" target="_blank">
             <BsInstagram size={20} css={css} />
           </Link>
 
-          <Link css={css} transition={"all 0.5s"}>
+          <Link css={css} transition={"all 0.5s"} href="https://twitter.com/ZoroUchiha69?t=JuTafZZ1kBaSrejd3cTzMQ&s=09" target="_blank">
             <AiOutlineTwitter size={20} />
           </Link>
             

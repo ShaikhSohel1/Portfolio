@@ -35,6 +35,8 @@ import profileUrl from "../assets/sohel.jpg"; // Tell webpack this JS file uses 
 import "../utils/motion.js";
 import { MotionConfig } from "framer-motion";
 import { headerVariants } from "../utils/motion.js";
+import Banner from "./Banner";
+import About from "./About";
 
 const Navbar = () => {
  
@@ -80,26 +82,26 @@ const Navbar = () => {
       <Heading size="md">Sohel Shaikh</Heading>
 
       <HStack spacing={8} width={"fit-content"} bg={bg} rounded={"3xl"} p={3}>
-        <Link p={2} rounded={25} transition={"all 0.5s"} css={css} className="active:underline">
+        <Link p={2} rounded={25} transition={"all 0.5s"} css={css} className="active:underline" href="#banner"> 
           <BiHomeAlt2 color={color} size={20} className="active:underline"/>
         </Link>
-        <Link p={2} rounded={25} transition={"all 0.5s"} css={css}>
+        <Link p={2} rounded={25} transition={"all 0.5s"} css={css} href="#about">
           <BiUserPlus
             color={color}
             size={20}
             className="hover:ease-in-out 0.9s "
             />
         </Link>
-        <Link p={2} rounded={25} transition={"all 0.5s"} css={css}>
+        <Link p={2} rounded={25} transition={"all 0.5s"} css={css} href="#Academics">
           <GoMortarBoard color={color} size={20} />
         </Link>
-        <Link p={2} rounded={25} transition={"all 0.5s"} css={css}  >
+        <Link p={2} rounded={25} transition={"all 0.5s"} css={css} href="#skills"  >
           <BiLibrary color={color} size={20}  />
         </Link>
-        <Link p={2} rounded={25} transition={"all 0.5s"} css={css}>
+        <Link p={2} rounded={25} transition={"all 0.5s"} css={css} href="#projects">
           <MdOutlineWorkOutline color={color} size={20} />
         </Link>
-        <Link p={2} rounded={25} transition={"all 0.5s"} css={css}>
+        <Link p={2} rounded={25} transition={"all 0.5s"} css={css} href="#contact">
           <BiMessageSquare color={color} size={20} />
         </Link>
       </HStack>
@@ -134,15 +136,7 @@ const Navbar = () => {
       w={"100%"}
       
       >
-        <Image
-          borderRadius="full"
-          boxSize="2.5rem"
-          src={profileUrl}
-          alt="Sohel Shaikh"
-          className="hover:animate-spin"
-          cursor={"pointer"}
-          bottom={0}
-          />
+       
       <Button
         // pos={"fixed"}
         // right={"20"}
@@ -161,6 +155,15 @@ const Navbar = () => {
         >
         <BiCategory size={"35"} color={color} />
       </Button>
+      <Image
+          borderRadius="full"
+          boxSize="2.5rem"
+          src={profileUrl}
+          alt="Sohel Shaikh"
+          className="hover:animate-spin"
+          cursor={"pointer"}
+          bottom={0}
+          />
 
       <Drawer isOpen={isOpen} placement="bottom" onClose={onClose}>
         <DrawerOverlay />
@@ -182,12 +185,12 @@ const Navbar = () => {
               </HStack>
               <HStack alignItems={"flex-start"} spacing={"5"}>
                 <Button color={color} bg={bg}>
-                  <Link p={2} rounded={25} transition={"all 0.5s"} css={css}>
+                  <Link p={2} rounded={25} transition={"all 0.5s"} css={css} href="#banner">
                     <BiHomeAlt2 color={color} size={20} />
                   </Link>
                 </Button>
                 <Button color={color} bg={bg}>
-                  <Link p={2} rounded={25} transition={"all 0.5s"} css={css}>
+                  <Link p={2} rounded={25} transition={"all 0.5s"} css={css} href="#about">
                     <BiUserPlus
                       color={color}
                       size={20}
@@ -196,24 +199,24 @@ const Navbar = () => {
                   </Link>
                 </Button>
                 <Button color={color} bg={bg}>
-                  <Link p={2} rounded={25} transition={"all 0.5s"} css={css}>
+                  <Link p={2} rounded={25} transition={"all 0.5s"} css={css}  href="#skills">
                     <BiLibrary color={color} size={20} />
                   </Link>
                 </Button>
               </HStack>
               <HStack alignItems={"center"} spacing={"5"} mt={5}>
                 <Button color={color} bg={bg}>
-                  <Link p={2} rounded={25} transition={"all 0.5s"} css={css}>
+                  <Link p={2} rounded={25} transition={"all 0.5s"} css={css}  href="#Academics">
                     <GoMortarBoard color={color} size={20} />
                   </Link>
                 </Button>
                 <Button color={color} bg={bg}>
-                  <Link p={2} rounded={25} transition={"all 0.5s"} css={css}>
+                  <Link p={2} rounded={25} transition={"all 0.5s"} css={css} href="#projects">
                     <MdOutlineWorkOutline color={color} size={20} />
                   </Link>
                 </Button>
                 <Button color={color} bg={bg}>
-                  <Link p={2} rounded={25} transition={"all 0.5s"} css={css}>
+                  <Link p={2} rounded={25} transition={"all 0.5s"} css={css}  href="#contact">
                     <BiMessageSquare color={color} size={20} />
                   </Link>
                 </Button>

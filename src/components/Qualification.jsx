@@ -39,6 +39,7 @@ const Qualification = () => {
       initial="hidden"
       whileInView="show"
       viewport={{ once: false, amount: 0.25 }}
+      id="Academics"
     >
       <VStack
         p={4}
@@ -226,6 +227,7 @@ const Qualification = () => {
       whileInView="show"
       variants={headerVariants}
       viewport={{ once: false, amount: 0.25 }}
+      id="Academics"
     >
       <VStack>
         {/* Mobile View  */}
