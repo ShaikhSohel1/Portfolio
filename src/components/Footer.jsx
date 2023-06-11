@@ -84,7 +84,9 @@ const Footer = () => {
         spacing={4}
         justify={{ base: 'center', md: 'space-between' }}
         align={{ base: 'center', md: 'center' }}>
-        <Text>© Copywright 2023 . All rights reserved</Text>
+        <Text>
+          © 2023 Copyright. All rights reserved
+        </Text>
         <HStack
               mt={{ lg: 10, md: 10 }}
               spacing={5}

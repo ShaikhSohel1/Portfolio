@@ -17,6 +17,7 @@ import {
   VStack,
   Center,
   UnorderedList,
+  IconButton,
 } from "@chakra-ui/react";
 import { Image, Heading, Box, Switch } from "@chakra-ui/react";
 import {motion} from "framer-motion";
@@ -37,6 +38,7 @@ import { MotionConfig } from "framer-motion";
 import { headerVariants } from "../utils/motion.js";
 import Banner from "./Banner";
 import About from "./About";
+import { FaMoon, FaSun } from "react-icons/fa";
 
 const Navbar = () => {
  
@@ -155,15 +157,23 @@ const Navbar = () => {
         >
         <BiCategory size={"35"} color={color} />
       </Button>
-      <Image
-          borderRadius="full"
-          boxSize="2.5rem"
-          src={profileUrl}
-          alt="Sohel Shaikh"
-          className="hover:animate-spin"
-          cursor={"pointer"}
-          bottom={0}
-          />
+      <IconButton
+    variant="solid"
+    aria-label="toggle theme"
+    rounded="full"
+    size="lg"
+    // position="absolute"
+    // bottom={4}
+    // left={4}
+    zIndex={100}
+    pos={"fixed"}
+    top={0}
+    right={0}
+    bg={bg}
+    m={2}
+    onClick={toggleColorMode}
+    icon={colorMode === "dark" ? <FaSun /> : <FaMoon />}
+    />
 
       <Drawer isOpen={isOpen} placement="bottom" onClose={onClose}>
         <DrawerOverlay />
@@ -174,17 +184,13 @@ const Navbar = () => {
           <DrawerBody>
             <VStack>
               <HStack>
-                <BiMoon color={!color} size={20} />
-                <Switch
-                  size="lg"
-                  onChange={toggleColorMode}
-                  colorScheme="blackAlpha"
-                  />
-                <BiSun color={!color} size={20} />
-                {colorMode === "light" ? "Dark" : "Light"}
+                {/* <BiMoon color={!color} size={20} /> */}
+         
+                {/* <BiSun color={!color} size={20} /> */}
+                {/* {colorMode === "light" ? "Dark" : "Light"} */}
               </HStack>
               <HStack alignItems={"flex-start"} spacing={"5"}>
-                <Button color={color} bg={bg}>
+                <Button color={color} bg={bg} >
                   <Link p={2} rounded={25} transition={"all 0.5s"} css={css} href="#banner">
                     <BiHomeAlt2 color={color} size={20} />
                   </Link>

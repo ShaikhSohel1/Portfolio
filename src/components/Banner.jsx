@@ -255,11 +255,12 @@ const Banner = () => {
           size={"md"}
           alignItems={"center"}
           justifyContent={"center"}
+          alignSelf={"center"}
         
           // p={3}
         >
-          I&apos;m creative Fullstack Developer , 
-          and<br /> I&apos;m very passionate and dedicated to<br/> my work .
+          I&apos;m creative Fullstack Developer 
+          <br /> I&apos;m very passionate and dedicated to<br/> my work .
         </Text>
 
         <button className="Btn">

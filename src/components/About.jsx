@@ -21,6 +21,7 @@ import { CgFileDocument } from "react-icons/cg";
 import devUrl from "../assets/devProfile.png";
 import { motion } from "framer-motion";
 import { fadeIn, staggerContainer } from "../utils/motion";
+import resume from "../assets/resume.pdf";
 
 const About = () => {
   const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 700);
@@ -197,7 +198,7 @@ const About = () => {
             size="lg"
             leftIcon={<CgFileDocument size={25} />}
             as="a"
-            href="../assets/resume.pdf"
+            href={resume}
             target="_blank"
             download
             p={8}
@@ -357,7 +358,7 @@ textAlign={"center"}
           size="lg"
           leftIcon={<CgFileDocument />}
           as="a"
-          href="../assets/resume.pdf"
+          href={resume}
           target="_blank"
           download
           alignSelf={"centre"}

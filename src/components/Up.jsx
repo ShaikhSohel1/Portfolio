@@ -36,7 +36,7 @@ const Up = () => {
     as='a'
     href="#banner"
     pos={"fixed"}
-    bottom={"10rem"}
+    bottom={"3rem"}
     right={"2rem"}
     zIndex={999}
     visibility={show ? "visible" : "hidden"}
