@@ -90,7 +90,7 @@ const Contact = () => {
           justifyContent={"center"}
           direction={["column", "column", "column", "row", "row"]}
         >
-          <Stack alignContent={"center"} gap={2}>
+          <Stack alignContent={"center"} gap={2} mt={10}>
             <Box
               bg={bg}
               color={color}
@@ -100,8 +100,9 @@ const Contact = () => {
               p={"5"}
               rounded={15}
               mt={10}
+              alignSelf={"center"}
             >
-              <VStack>
+              <VStack >
                 <MdEmail size={25} />
                 <Text mt={{ sm: 3, md: 3, lg: 5 }} fontFamily={"monospace"}>
                   Email
@@ -122,7 +123,8 @@ const Contact = () => {
               mt={{ lg: 10, md: 10 }}
               spacing={5}
               px={5}
-              alignItems="flex-start"
+              alignItems="center"
+              justifyContent="center"
             >
               <IconButton
                 aria-label="facebook"
@@ -164,12 +166,13 @@ const Contact = () => {
           <Stack
             boxSize={[200, 300, 400, 400, 400]}
             alignContent={"center"}
-            p={2}
+            p={6 }
             color={color}
             rounded={"md"}
+            mt
           >
-            <VStack gap={6} mt={5}>
-              <form ref={form} onSubmit={sendEmail} >
+            <VStack gap={6}>
+              <form ref={form} onSubmit={sendEmail} className='mt-5' >
               <InputGroup >
                 <InputLeftElement pointerEvents="none">
                   <BsPerson color={color1}/>
