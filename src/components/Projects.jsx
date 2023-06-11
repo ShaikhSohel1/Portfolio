@@ -163,7 +163,7 @@ const Projects = () => {
                       <Heading size="lg">{title}</Heading>
                       <Text
                         noOfLines={6}
-                        fontFamily={"cursive"}
+                        fontFamily={"monospace"}
                         // fontSize={"2xl"}
                         fontWeight={"light"}
                         fontStyle={"oblique"}

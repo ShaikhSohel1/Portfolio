@@ -242,13 +242,13 @@ const Banner = () => {
           <span className="wave"> 👋</span>
         </Text>
 
-        <Text fontFamily={"cursive"} fontWeight={"extrabold"} fontSize={25}>
+        <Text fontFamily={"monospace"} fontWeight={"extrabold"} fontSize={25}>
           {text}<Cursor cursorColor="red" />
         </Text>
 
         {/* About  */}
         <Text
-          fontFamily={"cursive"}
+          fontFamily={"monospace"}
           fontWeight={"light"}
           fontSize={[13, 13, 13, 20]}
           textOverflow={"ellipsis"}
