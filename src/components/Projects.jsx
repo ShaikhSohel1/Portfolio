@@ -133,6 +133,8 @@ const Projects = () => {
                           borderRadius={"xl"}
                           className="article-wrapper"
                           boxSize={"36"}
+                          
+                          href={demoLink}
 
                         />
                          </motion.div>
@@ -150,6 +152,14 @@ const Projects = () => {
                       textAlign={"center"}
                       px={["0.5","2.5","20","24","36"]}
                     >
+                       <HStack spacing={6}>
+                        <a href={github} target="_blank" rel="noreferrer">
+                          <AiFillGithub size={25} className="transition-all hover:scale-150 " />
+                        </a>
+                        <a href={demoLink} target="_blank" rel="noreferrer">
+                          <AiFillCloud size={25} className="transition-all hover:scale-150 "/>
+                        </a>
+                      </HStack>
                       <Heading size="lg">{title}</Heading>
                       <Text
                         noOfLines={6}
@@ -165,14 +175,7 @@ const Projects = () => {
                       <Text className="project-type">
                       {techStack}
                       </Text>
-                      <HStack spacing={6}>
-                        <a href={github} target="_blank" rel="noreferrer">
-                          <AiFillGithub size={25} className="transition-all hover:scale-150 " />
-                        </a>
-                        <a href={demoLink} target="_blank" rel="noreferrer">
-                          <AiFillCloud size={25} className="transition-all hover:scale-150 "/>
-                        </a>
-                      </HStack>
+                     
                     </VStack>
                   </VStack>
                 </swiper-slide>

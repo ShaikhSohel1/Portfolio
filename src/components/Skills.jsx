@@ -225,7 +225,7 @@ const Skills = () => {
 // For Mobile Screen
 <motion.div
 variants={staggerContainer}
- initial="hidden"
+ initial="show"
 whileInView="show"
 viewport={{once: true,amount:0.25}}
 className="skills w-full"

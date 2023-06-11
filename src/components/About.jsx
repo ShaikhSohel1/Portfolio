@@ -220,6 +220,7 @@ const About = () => {
       initial="hidden"
       whileInView="show"
       viewport={{once: true, threshold: 0.2}}
+      id="about"
         >
 
     <VStack
