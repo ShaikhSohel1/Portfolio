@@ -1,6 +1,6 @@
-import IMG1 from "../assets/QuestIO.png";
-import IMG2 from "../assets/evSpace.png";
-import IMG3 from "../assets/cryptoIO1.png";
+import IMG1 from "../assets/questIO.png";
+import IMG2 from "./assets/evSpace.png";
+import IMG3 from "./assets/cryptoIO1.png";
 
 
 export const data =[
