@@ -108,17 +108,16 @@ const Navbar = () => {
         </Link>
       </HStack>
 
-      <HStack>
-        <BiMoon color={!color} size={20} />
-        <Switch
-          size="lg"
-          onChange={toggleColorMode}
-          colorScheme="blackAlpha"
-          scrollBehavior={"smooth"}
-          />
-        <BiSun color={!color} size={20} />
-        {colorMode === "light" ? "Dark" : "Light"}
-      </HStack>
+      <IconButton
+    variant="solid"
+    aria-label="toggle theme"
+    rounded="full"
+    size="lg"
+    bg={bg}
+    color={color}
+    onClick={toggleColorMode}
+    icon={colorMode === "dark" ? <FaSun /> : <FaMoon />}
+    />
     </HStack>
     </motion.div>
   ) : 
