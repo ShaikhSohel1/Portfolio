@@ -189,7 +189,7 @@ const Banner = () => {
           variants={fadeIn("down", "tween", 0.3, 1)}
           >
 
-        <VStack spacing={"16"} p={5} rounded={20} padding={3} h={"full"}>
+        <VStack  h={"full"}>
           <div className="card">
             <div className="circle"></div>
             <div className="circle"></div>
@@ -205,10 +205,10 @@ const Banner = () => {
           rounded={20}
           padding={3}
           h={"full"}
-          ml={20}
-          borderBottomColor={bg}
-          borderWidth={3}
-          borderTopColor={bg}
+          // ml={20}
+          // borderBottomColor={bg}
+          // borderWidth={3}
+          // borderTopColor={bg}
           >
             
             <Link css={css} transition={"all 0.5s"} href="https://github.com/ShaikhSohel1" target="_blank">

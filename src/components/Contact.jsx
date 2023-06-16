@@ -74,10 +74,10 @@ const Contact = () => {
     },
   };
 
-  const buttonALign = isLargeScreen? "flex-start" : "center";
+  const buttonALign = isLargeScreen? "12" : "0";
 
   return (
-    <Container h={"full"} w={"full"} mt={"20"} id="contact">
+    <Container h={"full"} w={"full"}  id="contact">
       <VStack>
         <VStack>
           <Text mt={{ sm: 3, md: 3, lg: 5 }} fontFamily={"monospace"}>
@@ -167,15 +167,15 @@ const Contact = () => {
           {/* <Text alignSelf={"center"} fontStyle={"italic"} fontWeight={"bold"}>OR</Text> */}
 
           <Stack
-            boxSize={[400, 400, 400, 400, 600]}  
+            boxSize={[300, 400, 400, 400, 600]}  
             p={6 }
             color={color}
             rounded={"md"}
-            alignContent = {buttonALign}
+           
             
           >
             <VStack gap={6} >
-              <form ref={form} onSubmit={sendEmail} className='mt-5 flex-row items-center' >
+              <form ref={form} onSubmit={sendEmail} className='mt-5 ' >
               <InputGroup  w={"-moz-min-content"}>
                 <InputLeftElement pointerEvents="none">
                   <BsPerson color={color1}/>
@@ -220,7 +220,7 @@ const Contact = () => {
                 mt={5}
                 rounded={10}
                 // make button centre
-                  
+               ml= {["12","12","20","0","0"]}
                 // className="Btn"
                 type="submit"
                 >

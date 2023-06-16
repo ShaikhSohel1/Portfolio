@@ -232,7 +232,7 @@ const Qualification = () => {
       <VStack>
         {/* Mobile View  */}
 
-        <Box bg={bg} color={color} p={10} m={10} rounded={25}>
+        <Box bg={bg} color={color} p={10}  rounded={25}>
           <h2 className="text-3xl font-bold text-center mb-8">
             Qualifications
           </h2>

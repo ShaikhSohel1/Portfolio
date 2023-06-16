@@ -54,7 +54,7 @@ const Footer = () => {
     <Box
     bg={useColorModeValue('gray.50', 'gray.900')}
     color={useColorModeValue('gray.700', 'gray.200')}
-    mt={0}>
+    mt={'12'}>
     <Container
       as={Stack}
       maxW={'6xl'}

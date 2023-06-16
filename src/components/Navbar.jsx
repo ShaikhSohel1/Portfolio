@@ -127,7 +127,7 @@ const Navbar = () => {
    
       
     <HStack
-      // justifyContent={"space-between"}
+      justifyContent={"space-between"}
       // p={4}
       pos={"fixed"}
       top={0}
@@ -159,6 +159,7 @@ const Navbar = () => {
         >
         <BiCategory size={"25"} color={color} />
       </Button>
+
       <IconButton
     variant="solid"
     aria-label="toggle theme"
@@ -170,9 +171,9 @@ const Navbar = () => {
     zIndex={100}
     pos={"fixed"}
     top={0}
-    right={0}
+    right={1}
     bg={bg}
-    m={2}
+    // m={2}
     onClick={toggleColorMode}
     icon={colorMode === "dark" ? <FaSun /> : <FaMoon />}
     />
