@@ -144,7 +144,7 @@ const Banner = () => {
             justifySelf={"center"}
           >
             I&apos;m creative Fullstack Developer based in Pune, <br />
-            and I&apos;m very passionate and dedicated to my work.
+            and very passionate and dedicated to my work.
           </Text>
 
           <button className="Btn h-16">
@@ -256,11 +256,13 @@ const Banner = () => {
           alignItems={"center"}
           justifyContent={"center"}
           alignSelf={"center"}
+         w={60}
+         textAlign={"center"}
         
           // p={3}
         >
           I&apos;m creative Fullstack Developer 
-          <br /> I&apos;m very passionate and dedicated to<br/> my work .
+        very passionate and dedicated to<br/> my work .
         </Text>
 
         <button className="Btn">

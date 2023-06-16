@@ -74,6 +74,8 @@ const Contact = () => {
     },
   };
 
+  const buttonALign = isLargeScreen? "flex-start" : "center";
+
   return (
     <Container h={"full"} w={"full"} mt={"20"} id="contact">
       <VStack>
@@ -99,7 +101,7 @@ const Contact = () => {
               h={"fit-content"}
               p={"5"}
               rounded={15}
-              mt={10}
+              mt={5}
               alignSelf={"center"}
             >
               <VStack >
@@ -143,10 +145,11 @@ const Contact = () => {
                 size="lg"
                 isRound={true}
                 _hover={{ bg: bg , color:color }}
-                icon={<BsGithub size="28px"
+                icon={<BsGithub size="28px"/>}
+                as="a"
                 href="https://github.com/ShaikhSohel1" 
                 target="_blank"
-                />}
+                
               />
               <IconButton
                 aria-label="discord"
@@ -164,16 +167,16 @@ const Contact = () => {
           {/* <Text alignSelf={"center"} fontStyle={"italic"} fontWeight={"bold"}>OR</Text> */}
 
           <Stack
-            boxSize={[200, 300, 400, 400, 400]}
-            alignContent={"center"}
+            boxSize={[400, 400, 400, 400, 600]}  
             p={6 }
             color={color}
             rounded={"md"}
-            mt
+            alignContent = {buttonALign}
+            
           >
-            <VStack gap={6}>
-              <form ref={form} onSubmit={sendEmail} className='mt-5' >
-              <InputGroup >
+            <VStack gap={6} >
+              <form ref={form} onSubmit={sendEmail} className='mt-5 flex-row items-center' >
+              <InputGroup  w={"-moz-min-content"}>
                 <InputLeftElement pointerEvents="none">
                   <BsPerson color={color1}/>
                 </InputLeftElement>
@@ -199,6 +202,8 @@ const Contact = () => {
                 required
                 mt={5}
                 />
+
+                {/* Make This Button Centre  */}
               <Button
                 _hover={{
                   transform: "scale(0.95)",
@@ -214,7 +219,8 @@ const Contact = () => {
                 py={8}
                 mt={5}
                 rounded={10}
-                alignSelf={"start"}
+                // make button centre
+                  
                 // className="Btn"
                 type="submit"
                 >

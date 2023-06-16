@@ -36,7 +36,7 @@ const About = () => {
     },
   };
   const aboutText =
-    "Highly motivated software engineer with a strong desire for entry-level employment in a dynamic and progressive company. Currently pursuing a Master's in Computer Science at Fergusson College Pune, I possess a diverse range of technology experience. My skill set includes developing web projects using Node.js, React (JavaScript and TypeScript), HTML, CSS, Tailwind, and database management. Additionally, I am proficient in Java. I am enthusiastic about contributing to a collaborative team, continuously expanding my knowledge, and leveraging technology to address business requirements effectively. I am eager to apply my skills and expertise to add significant value to an organization.";
+    "Highly motivated software engineer with a strong desire for entry-level employment in a dynamic and progressive company. Currently pursuing a Master's in Computer Science at Fergusson College Pune, I possess a diverse range of technology experience. My skill set includes developing web projects using  NextJs, Node.js, React (JavaScript and TypeScript), Tailwind, and database management. Additionally, I am proficient in Java. I am enthusiastic about contributing to a collaborative team, continuously expanding my knowledge, and leveraging technology to address business requirements effectively. I am eager to apply my skills and expertise to add significant value to an organization.";
 
   React.useEffect(() => {
     const handleResize = () => setIsLargeScreen(window.innerWidth >= 700);
@@ -136,8 +136,8 @@ const About = () => {
             </Box>
             <Box boxSize={"28"} bg={bg1} color={color1} rounded={"lg"} p={5} borderWidth={"thin"}>
               <VStack>
-                <CircularProgress value={40} color="green.600">
-                  <CircularProgressLabel>40+</CircularProgressLabel>
+                <CircularProgress value={30} color="green.600">
+                  <CircularProgressLabel>20+</CircularProgressLabel>
                 </CircularProgress>
               <Heading  fontSize={["sm", "sm", "sm", "lg"]}>Projects</Heading>
               </VStack>
@@ -146,9 +146,9 @@ const About = () => {
               <Box boxSize={"28"} bg={bg1} color={color1} rounded={"lg"} p={5}  borderWidth={"thin"}>
                 <VStack>
                   <CircularProgress value={10} color="green.600">
-                    <CircularProgressLabel>1+</CircularProgressLabel>
+                    <CircularProgressLabel>2+</CircularProgressLabel>
                   </CircularProgress>
-                  <Heading  fontSize={["sm", "sm", "sm", "lg"]}>Experience</Heading>
+                  <Heading  fontSize={["sm", "sm", "sm", "lg"]}>Collabration</Heading>
                 </VStack>
 
             </Box>
@@ -299,8 +299,8 @@ textAlign={"center"}
         >
             <Box boxSize={"28"} bg={bg1} color={color1} rounded={"lg"} p={5} borderWidth={"thin"}>
               <VStack>
-                <CircularProgress value={40} color="green.600">
-                  <CircularProgressLabel>40+</CircularProgressLabel>
+                <CircularProgress value={30} color="green.600">
+                  <CircularProgressLabel>20+</CircularProgressLabel>
                 </CircularProgress>
               <Heading  fontSize={["sm", "sm", "sm", "lg"]}>Projects</Heading>
               </VStack>
@@ -313,9 +313,9 @@ textAlign={"center"}
             <Box boxSize={"28"} bg={bg1} color={color1} rounded={"lg"} p={5} borderWidth={"thin"}>
               <VStack>
                 <CircularProgress value={10} color="green.600">
-                  <CircularProgressLabel>1+</CircularProgressLabel>
+                  <CircularProgressLabel>2+</CircularProgressLabel>
                 </CircularProgress>
-                <Heading  fontSize={["sm", "sm", "sm", "lg"]}>Experience</Heading>
+                <Heading  fontSize={["sm", "sm", "sm", "lg"]}>Collabration</Heading>
               </VStack>
             </Box>
             </motion.span>

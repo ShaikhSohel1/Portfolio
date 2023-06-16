@@ -54,7 +54,7 @@ const Footer = () => {
     <Box
     bg={useColorModeValue('gray.50', 'gray.900')}
     color={useColorModeValue('gray.700', 'gray.200')}
-    mt={'44'}>
+    mt={0}>
     <Container
       as={Stack}
       maxW={'6xl'}
@@ -111,10 +111,11 @@ const Footer = () => {
                 size="lg"
                 isRound={true}
                 _hover={{ bg: bg , color:color }}
-                icon={<BsGithub size="28px"
+                icon={<BsGithub size="28px"/>}
+                as="a"
                 href="https://github.com/ShaikhSohel1" 
                 target="_blank"
-                />}
+                
               />
               <IconButton
                 aria-label="discord"

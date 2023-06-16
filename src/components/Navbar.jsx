@@ -69,6 +69,7 @@ const Navbar = () => {
     whileInView="show"
     variants={headerVariants}
     viewport={{once:false, amount:0.25 }}
+    id="header"
     >
 
     <HStack justifyContent={"space-evenly"} p={4}>
@@ -126,7 +127,7 @@ const Navbar = () => {
    
       
     <HStack
-      justifyContent={"space-between"}
+      // justifyContent={"space-between"}
       // p={4}
       pos={"fixed"}
       top={0}
@@ -134,7 +135,7 @@ const Navbar = () => {
       // borderTopRadius={10}
       boxShadow="xl"
       color={color}
-      w={"100%"}
+      // w={"100%"}
       
       >
        
@@ -143,24 +144,26 @@ const Navbar = () => {
         // right={"20"}
         bg={bg}
         p={0}
-        w={50}
-        h={10}
+        // w={50}
+        // h={10}
         boxShadow="xl"
-        borderEndRadius={"full"}
-        borderRightRadius={"full"}
-        borderLeftRadius={"full"}
+        // borderEndRadius={"full"}
+        borderBottomRadius={10}
+        size={"md"}
+        
+    
         onClick={onOpen}
         transform={"translateX(-50%,-50%)"}
         zIndex={100}
         // mb={10}
         >
-        <BiCategory size={"35"} color={color} />
+        <BiCategory size={"25"} color={color} />
       </Button>
       <IconButton
     variant="solid"
     aria-label="toggle theme"
     rounded="full"
-    size="lg"
+    size="md"
     // position="absolute"
     // bottom={4}
     // left={4}
@@ -174,7 +177,7 @@ const Navbar = () => {
     icon={colorMode === "dark" ? <FaSun /> : <FaMoon />}
     />
 
-      <Drawer isOpen={isOpen} placement="bottom" onClose={onClose}>
+      <Drawer isOpen={isOpen} placement="top" onClose={onClose}>
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
