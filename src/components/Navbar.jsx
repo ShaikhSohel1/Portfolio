@@ -1,8 +1,9 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
+
 import {
   HStack,
-  Link,
+  Link,  
   useColorMode,
   useColorModeValue,
   Drawer,
@@ -18,6 +19,7 @@ import {
   Center,
   UnorderedList,
   IconButton,
+  Text,
 } from "@chakra-ui/react";
 import { Image, Heading, Box, Switch } from "@chakra-ui/react";
 import {motion} from "framer-motion";
@@ -29,6 +31,7 @@ import {
   BiSun,
   BiMoon,
   BiCategory,
+  BiMenuAltLeft,
 } from "react-icons/bi";
 import { GoMortarBoard } from "react-icons/go";
 import { MdOutlineWorkOutline } from "react-icons/md";
@@ -46,13 +49,15 @@ const Navbar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   const bg = useColorModeValue("#333333", "white");
   const color = useColorModeValue("white", "black");
+  const color1 = useColorModeValue("black", "white");
+
   const css = {
     "&:hover": {
       transform: "scale(1.5)",
     },
   };
   // Drawer for mobile view of header component using chakra ui drawer component and useDisclosure hook from chakra ui library to open and close drawer
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { isOpen, onOpen, onClose} = useDisclosure();
   //to set width of screen using useState hook
   const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 700);
 
@@ -131,12 +136,8 @@ const Navbar = () => {
       // p={4}
       pos={"fixed"}
       top={0}
-      // left={0}
-      // borderTopRadius={10}
-      boxShadow="xl"
-      color={color}
-      // w={"100%"}
-      
+      w={"100%"}
+      marginTop={2}
       >
        
       <Button
@@ -147,55 +148,103 @@ const Navbar = () => {
         // w={50}
         // h={10}
         boxShadow="xl"
-        // borderEndRadius={"full"}
-        borderBottomRadius={10}
-        size={"md"}
-        
+        borderEndRadius={"full"}
+        size={"lg"}
+        // marginTop={2}
     
         onClick={onOpen}
         transform={"translateX(-50%,-50%)"}
         zIndex={100}
         // mb={10}
         >
-        <BiCategory size={"25"} color={color} />
+        {/* <BiCategory size={"25"}  /> */}
+        <BiMenuAltLeft size={"35"} color={color} />
       </Button>
 
       <IconButton
     variant="solid"
     aria-label="toggle theme"
     rounded="full"
-    size="md"
+    size="lg"
     // position="absolute"
     // bottom={4}
     // left={4}
     zIndex={100}
-    pos={"fixed"}
+    // pos={"fixed"}
     top={0}
     right={1}
     bg={bg}
-    // m={2}
+    color={color}
+   
+    
     onClick={toggleColorMode}
     icon={colorMode === "dark" ? <FaSun /> : <FaMoon />}
     />
 
-      <Drawer isOpen={isOpen} placement="top" onClose={onClose}>
+      <Drawer isOpen={isOpen} placement="left" onClose={onClose}  size={'xs'} closeOnEsc={true} closeOnOverlayClick={true} >
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
           <DrawerHeader justifyItems={"center"}>Sohel  Shaikh</DrawerHeader>
 
           <DrawerBody>
-            <VStack>
-              <HStack>
-                {/* <BiMoon color={!color} size={20} /> */}
+            <VStack alignItems={"flex-start"} spacing={"5"}>
+
+              <Link p={2} rounded={25} transition={"all 0.5s"} css={css} href="#banner"  onClick={()=>{setTimeout(onClose,500)}}>
+                <HStack>
+                <BiHomeAlt2 color={color1} size={20}  />
+                  <Text >Home</Text>
+                  </HStack>
+              </Link>
+
          
-                {/* <BiSun color={!color} size={20} /> */}
-                {/* {colorMode === "light" ? "Dark" : "Light"} */}
-              </HStack>
-              <HStack alignItems={"flex-start"} spacing={"5"}>
-                <Button color={color} bg={bg} >
+              <Link p={2} rounded={25} transition={"all 0.5s"} css={css} href="#about" onClick={()=>{setTimeout(onClose,500)}}>
+                <HStack>
+                <BiUserPlus
+                  color={color1}
+                  size={20}
+                  />
+                  <Text >About</Text>
+                  </HStack>
+                </Link>
+
+              <Link p={2} rounded={25} transition={"all 0.5s"} css={css} href="#Academics" onClick={()=>{setTimeout(onClose,500)}}>
+                <HStack>
+                <GoMortarBoard color={color1} size={20} />
+                  <Text >Academics</Text>
+                  </HStack>
+              </Link>
+
+              <Link p={2} rounded={25} transition={"all 0.5s"} css={css} href="#skills" onClick={()=>{setTimeout(onClose,500)}}>
+                <HStack>
+                <BiLibrary color={color1} size={20} />
+                  <Text >Skills</Text>
+                  </HStack>
+              </Link>
+
+              <Link p={2} rounded={25} transition={"all 0.5s"} css={css} href="#projects" onClick={()=>{setTimeout(onClose,500)}}>
+                <HStack>
+                <MdOutlineWorkOutline color={color1} size={20} />
+                  <Text >Projects</Text>
+                  </HStack>
+              </Link>
+
+              <Link p={2} rounded={25} transition={"all 0.5s"} css={css} href="#contact" onClick={()=>{setTimeout(onClose,500)}}>
+                <HStack>
+                <BiMessageSquare color={color1} size={20} />
+                  <Text >Contact</Text>
+                  </HStack>
+              </Link>
+          
+
+                 
+
+
+           
+          
+                {/* <Button color={color} bg={bg} >
                   <Link p={2} rounded={25} transition={"all 0.5s"} css={css} href="#banner">
-                    <BiHomeAlt2 color={color} size={20} />
+                   Home
                   </Link>
                 </Button>
                 <Button color={color} bg={bg}>
@@ -212,8 +261,8 @@ const Navbar = () => {
                     <BiLibrary color={color} size={20} />
                   </Link>
                 </Button>
-              </HStack>
-              <HStack alignItems={"center"} spacing={"5"} mt={5}>
+             
+            
                 <Button color={color} bg={bg}>
                   <Link p={2} rounded={25} transition={"all 0.5s"} css={css}  href="#Academics">
                     <GoMortarBoard color={color} size={20} />
@@ -229,7 +278,7 @@ const Navbar = () => {
                     <BiMessageSquare color={color} size={20} />
                   </Link>
                 </Button>
-              </HStack>
+              */}
             </VStack>
           </DrawerBody>
         </DrawerContent>

@@ -229,7 +229,7 @@ const Qualification = () => {
       viewport={{ once: false, amount: 0.25 }}
       id="Academics"
     >
-      <VStack>
+      <VStack mt={5} p={5}>
         {/* Mobile View  */}
 
         <Box bg={bg} color={color} p={10}  rounded={25}>
@@ -274,7 +274,7 @@ const Qualification = () => {
                 <h3 className="text-xl font-semibold mb-2">Certifications</h3>
                 <ul className="list-disc pl-6 ">
                   <li>Java (Codedamm) </li>
-                  <li>Microsoft Azure Fundamentals</li>
+                
                 </ul>
               </div>
             </div>

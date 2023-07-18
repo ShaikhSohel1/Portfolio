@@ -37,7 +37,7 @@ const Banner = () => {
     },
   };
   const [text] = useTypewriter({
-    words: ["-Full Stack Developer", "-Student", "-Designer", "-Freelancer"],
+    words: ["-Full Stack Developer", "-Student", "-Designer"],
     loop: 0,
     cursorStyle: "|",
     deleteSpeed: 30,
@@ -140,11 +140,10 @@ const Banner = () => {
             fontWeight={"light"}
             fontSize={[13, 13, 13, 20]}
             textOverflow={"ellipsis"}
-            w={"-moz-min-content"}
+            w={"md"}
             justifySelf={"center"}
           >
-            I&apos;m creative Fullstack Developer based in Pune, <br />
-            and very passionate and dedicated to my work.
+           I am a passionate and dedicated Fullstack Developer, fueled by creativity and committed to delivering exceptional solutions that inspire and captivate.
           </Text>
 
           <button className="Btn h-16">
@@ -183,13 +182,14 @@ const Banner = () => {
       whileInView="show"
       viewport={{ once: false, amount: 0.25 }}
       id="banner"
+
     >
-      <HStack m={10} justifyContent={"space-between"}>
+      <HStack m={10} justifyContent={"space-between"} >
         <motion.span
           variants={fadeIn("down", "tween", 0.3, 1)}
           >
 
-        <VStack  h={"full"}>
+        <VStack  h={"full"} mt={"8"}>
           <div className="card">
             <div className="circle"></div>
             <div className="circle"></div>
@@ -261,8 +261,8 @@ const Banner = () => {
         
           // p={3}
         >
-          I&apos;m creative Fullstack Developer 
-        very passionate and dedicated to<br/> my work .
+          {/* text about me  */}
+          I am a passionate and dedicated Fullstack Developer, fueled by creativity and committed to delivering exceptional solutions that inspire and captivate.
         </Text>
 
         <button className="Btn">

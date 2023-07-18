@@ -64,6 +64,7 @@ const About = () => {
       alignContent={"center"}
       // justifyContent={"space-evenly"}
       gap={10}
+      
     >
       <VStack>
       <motion.span

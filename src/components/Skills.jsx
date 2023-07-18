@@ -232,7 +232,7 @@ className="skills w-full"
 id="skills"
 
 >
-    <VStack w={"full"} justifyContent={"space-evenly"} gap={20}>
+    <VStack w={"full"} justifyContent={"space-evenly"} gap={20} mt={5}>
       <Heading>Skills</Heading>
       <VStack gap={20} w={"auto"} mx={36} px={5}>
         {/* Frontend  */}

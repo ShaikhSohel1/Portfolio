@@ -94,7 +94,7 @@ const Projects = () => {
       </VStack>
 
     
-      <div className="h-screen relative flex overflow-hiddem  text-left md:flex-row max-w-full justify-evenly mx-auto item-centre ">
+      <div className="h-screen relative flex overflow-hiddem  text-left md:flex-row max-w-full justify-evenly mx-auto item-centre mb-24">
         <swiper-container
           ref={swiperElRef}
           slides-per-view="1"

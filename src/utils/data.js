@@ -116,7 +116,7 @@ export const skillsBackend =[
     {
         id: 4,
         title: "PostgreSQL",
-        desc:'Intermediate',
+        desc:'Basic',
         image:"https://img.icons8.com/color/48/000000/postgreesql.png",
     },
     {
@@ -155,7 +155,7 @@ export const skillsFramework =[
     {
         id: 3,
         title: "Node.js",
-        desc:'Intermediate',
+        desc:'Basic',
         image:"https://img.icons8.com/color/48/000000/nodejs.png",
     },
     {
@@ -178,9 +178,9 @@ export const skillsFramework =[
     },
     {
         id: 7,
-        title: "Vs Code",
-        desc:'Intermediate',
-        image:"https://img.icons8.com/color/48/000000/visual-studio-code-2019.png",
+        title: "Docker",
+        desc:'Basic',
+        image:"https://img.icons8.com/color/48/000000/docker.png",
     },
     {
         id: 8,
